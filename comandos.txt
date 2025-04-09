@@ -1,9 +1,13 @@
+/* Python */
 console.log("")                    // mostrar no console
-console.log()                     // quarddar uma variavel 
-const idade =                    // informar a idade da pessoa / variavel
-let nome = ""                   // primeiro nome
+console.log()                      // quarddar uma variavel 
+const idade =                      // informar a idade da pessoa / variavel
+let nome = ""                      // primeiro nome
 const sobreNome =""                //sobre noome 
-nome = nome + sobreNome           //juntar os dois 
-.push(``)                        // adiciona mais informação no array
-new array (``)                  // cria um local de armazenar informação
-git push --force-with-lease        //para addicionar arquivos 
+nome = nome + sobreNome            //juntar os dois 
+.push(``)                          // adiciona mais informação no array
+new array (``)                     // cria um local de armazenar informação
+/* Para addicionar arquivos */
+git add .                          // salva todas as modificações
+git commit -m "nome da alteeração" //crir um commit para deixar salvo a alteração no commit
+git push --force-with-lease        //para mandar para o git hub 
