@@ -1,4 +1,4 @@
-/* Python */
+/* Java */
 console.log("")                    // mostrar no console
 console.log()                      // quarddar uma variavel 
 const idade =                      // informar a idade da pessoa / variavel
