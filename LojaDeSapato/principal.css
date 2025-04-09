@@ -1,0 +1,145 @@
+/* Configura o estilo geral da página */
+body {
+    font-family: Arial, sans-serif; /* Define a fonte do texto */
+    margin: 0; /* Remove a margem padrão */
+    padding: 0; /* Remove o preenchimento padrão */
+    box-sizing: border-box; /* Ajusta o comportamento do box-model */
+    background-color: #f5f5f5; /* Define a cor de fundo da página */
+    color: #333; /* Define a cor do texto */
+}
+
+/* Estiliza o cabeçalho */
+header {
+    background-color: #333; /* Cor de fundo do cabeçalho */
+    color: white; /* Cor do texto do cabeçalho */
+    padding: 1rem 0; /* Espaçamento interno no cabeçalho */
+    text-align: center; /* Alinha o texto ao centro */
+}
+
+/* Estiliza a lista de navegação (menu) */
+nav ul {
+    list-style-type: none; /* Remove os marcadores da lista */
+    padding: 0; /* Remove o preenchimento da lista */
+    display: flex; /* Exibe os itens da lista em linha (flexbox) */
+    justify-content: center; /* Centraliza os itens na tela */
+    gap: 20px; /* Adiciona um espaço de 20px entre os itens */
+}
+
+/* Estiliza os links da navegação */
+nav a {
+    color: cyan; /* Cor do texto dos links */
+    text-decoration: none; /* Remove o sublinhado dos links */
+    font-weight: bold; /* Define o texto como negrito */
+    font-size: medium;  /* Define o tamanho da fonte como médio */
+}
+
+/* Define o estilo de hover (quando o mouse passa sobre o link) */
+a:hover {
+    color: blueviolet; /* Altera a cor do link quando o mouse passa por cima */
+    font-size: large; /* Aumenta o tamanho da fonte quando o mouse passa por cima */
+}
+
+/* Estiliza a seção de produtos */
+section#produtos {
+    display: flex; /* Exibe os produtos em linha (flexbox) */
+    justify-content: center; /* Centraliza os produtos */
+    gap: 20px; /* Adiciona um espaço de 20px entre os produtos */
+    padding: 2rem; /* Adiciona um espaçamento interno de 2rem */
+    flex-wrap: wrap;
+}
+
+.produto {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+    width: 200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.produto img {
+    width: 100%;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 1rem;
+    border-radius: 8px 8px 0 0;
+}
+
+button {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 0,5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0,3s;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #333;
+    color: #fff;
+}
+
+.formulario{
+    width: 400px;
+    padding: 30px;
+    border:1px solid #ccc;
+    justify-items: center;
+}
+.formulario p{
+    width: 100%;
+    font-size: 1.5em;
+}
+.field{
+    width: 100%;
+    margin: 15px 0;
+}
+.field label, 
+.field span{
+    padding-left: 10px;
+    font-size: 1.1em;
+    display: block;
+    width: 100%;
+}
+.radiobox label{
+    width: auto;
+    display: inline-block;
+}
+input[type=text],
+input[type=email],
+textarea{
+    width: 100%;
+    padding-left: 10px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 15px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+input#nao{
+    margin-left: 30px;
+}
+textarea{
+    line-height: 20px;
+    padding: 10px;
+    height: 90px;
+    resize: none;
+}
+input[type=submit]{
+    display: block;
+    background-color: #ccc;
+    height: 35px;
+    border: none;
+    outline: 0;
+    cursor: pointer;
+    width: 100px;
+    margin: 0 auto;
+    text-align: center;
+    border-radius: 15px;
+}

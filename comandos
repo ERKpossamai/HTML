@@ -1,0 +1,8 @@
+console.log("")                    // mostrar no console
+console.log()                     // quarddar uma variavel 
+const idade =                    // informar a idade da pessoa / variavel
+let nome = ""                   // primeiro nome
+const sobreNome =""             \\ sobre noome 
+nome = nome + sobreNome          \\ juntar os dois 
+.push(``)                         \\ adiciona mais informação no array
+new array (``)                     \\ cria um local de armazenar informação
