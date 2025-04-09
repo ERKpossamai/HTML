@@ -377,3 +377,59 @@ header {
         padding: 15px;
     }
 }
+
+/* Local do mini mapa */
+iframe {
+    width: 90%;
+    height: 450px;
+    border: 0;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 1rem;
+}
+
+.buttons {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+.lc {
+    background-color:#c73102;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    text-decoration: none;
+    transition: bacground-color 0.3s;
+}
+.lc:hover {
+    background-color: #222;
+}
+.buttons .whatsapp {
+    background-color: #25D366;
+    text-decoration: none;
+    transition: bacground-color 0.3s;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    color: #222;
+}
+
+.buttons .whatsapp:hover {
+    background-color: #1ebe57;
+    text-decoration: none;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    color: #222;
+}
+
+section {
+    text-align: center;
+    padding: 2rem;
+}
