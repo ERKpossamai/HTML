@@ -27,6 +27,31 @@ header {
     align-items: center;
     z-index: 99;
 }
+header h1 {
+    font-size: 2rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: transparent;
+    -webkit-text-stroke: 1px #c73102;
+    position: relative;
+}
+
+header h1::before {
+    content: "Estação do corpo";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    overflow: hidden;
+    color: #c73102;
+    white-space: nowrap;
+    transition: width 0.3s ease-in-out;
+}
+
+header h1:hover::before {
+    width: 100%;
+    filter: drop-shadow(0 0 25px #e54004);
+}
 
 /* 🖼️ Estilo da imagem do logo */
 .logo-img {
@@ -173,7 +198,6 @@ header {
 .input-box input:valid~label {
     top: -5px;
 }
-
 
 .input-box input {
     width: 100%;
@@ -403,7 +427,7 @@ iframe {
     border-radius: 8px;
     font-size: 16px;
     text-decoration: none;
-    transition: bacground-color 0.3s;
+    transition: background-color 0.3s;
 }
 .lc:hover {
     background-color: #222;
@@ -411,7 +435,7 @@ iframe {
 .buttons .whatsapp {
     background-color: #25D366;
     text-decoration: none;
-    transition: bacground-color 0.3s;
+    transition: background-color 0.3s;
     padding: 0.8rem 1.5rem;
     border: none;
     border-radius: 8px;
@@ -432,4 +456,9 @@ iframe {
 section {
     text-align: center;
     padding: 2rem;
+}
+
+section h2 {
+    text-align: center;
+    color: #e54004;
 }
