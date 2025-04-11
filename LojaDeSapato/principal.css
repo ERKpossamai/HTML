@@ -1,50 +1,50 @@
 /* Configura o estilo geral da página */
 body {
-    font-family: Arial, sans-serif; /* Define a fonte do texto */
-    margin: 0; /* Remove a margem padrão */
-    padding: 0; /* Remove o preenchimento padrão */
-    box-sizing: border-box; /* Ajusta o comportamento do box-model */
-    background-color: #f5f5f5; /* Define a cor de fundo da página */
-    color: #333; /* Define a cor do texto */
+    font-family: Arial, sans-serif; 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    background-color: #f5f5f5; 
+    color: #333; 
 }
 
 /* Estiliza o cabeçalho */
 header {
-    background-color: #333; /* Cor de fundo do cabeçalho */
-    color: white; /* Cor do texto do cabeçalho */
-    padding: 1rem 0; /* Espaçamento interno no cabeçalho */
-    text-align: center; /* Alinha o texto ao centro */
+    background-color: #333; 
+    color: white;
+    padding: 1rem 0; 
+    text-align: center; 
 }
 
 /* Estiliza a lista de navegação (menu) */
 nav ul {
-    list-style-type: none; /* Remove os marcadores da lista */
-    padding: 0; /* Remove o preenchimento da lista */
-    display: flex; /* Exibe os itens da lista em linha (flexbox) */
-    justify-content: center; /* Centraliza os itens na tela */
-    gap: 20px; /* Adiciona um espaço de 20px entre os itens */
+    list-style-type: none; 
+    padding: 0; 
+    display: flex; 
+    justify-content: center; 
+    gap: 20px; 
 }
 
 /* Estiliza os links da navegação */
 nav a {
-    color: cyan; /* Cor do texto dos links */
-    text-decoration: none; /* Remove o sublinhado dos links */
-    font-weight: bold; /* Define o texto como negrito */
-    font-size: medium;  /* Define o tamanho da fonte como médio */
+    color: cyan; 
+    text-decoration: none; 
+    font-weight: bold; 
+    font-size: medium; 
 }
 
 /* Define o estilo de hover (quando o mouse passa sobre o link) */
 a:hover {
-    color: blueviolet; /* Altera a cor do link quando o mouse passa por cima */
-    font-size: large; /* Aumenta o tamanho da fonte quando o mouse passa por cima */
+    color: blueviolet; 
+    font-size: large; 
 }
 
 /* Estiliza a seção de produtos */
 section#produtos {
-    display: flex; /* Exibe os produtos em linha (flexbox) */
-    justify-content: center; /* Centraliza os produtos */
-    gap: 20px; /* Adiciona um espaço de 20px entre os produtos */
-    padding: 2rem; /* Adiciona um espaçamento interno de 2rem */
+    display: flex; 
+    justify-content: center; 
+    gap: 20px; 
+    padding: 2rem; 
     flex-wrap: wrap;
 }
 
