@@ -322,7 +322,7 @@ header h1:hover::before {
 .inf_pl h3 {
     color: #e54004;
     text-align: center;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
     font-size: 1.4rem;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -340,12 +340,6 @@ header h1:hover::before {
     display: flex;
     align-items: center;
     gap: 10px;
-}
-
-.inf_pl li::before {
-    content: '✔️';
-    color: #e54004;
-    font-size: 1.1rem;
 }
 
 .parent {
