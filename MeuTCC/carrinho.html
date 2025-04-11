@@ -4,18 +4,40 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio</title>
+    <title>Produtos - Carrinho</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="img/logo.png" type="image/x-icon">
 </head>
 <body>
      <header>
         <img class="logo-img" src="img/logo.png" alt="Logo Estação do Corpo">
-        <h1>Carrinho</h1>
+        <h1>Estação do corpo</h1>
         <div class="carrinho" onclick="toggleCarrinho()">
           <span class="contador">0</span>
         </div>
     </header>
-    
+
+    <div class="produtos_car">
+      <img src="img/produto1.png" alt="Pré treino">
+      <h2>Prétreino em oferta</h2>
+      <p>R$149,99</p>
+      <Button onclick="adicionarAoCarrinho('Pré treino', 199.90)">Adicionado ao carrinho</Button>
+    </div>
+
+    <div class="produtos_car">
+      <img src="img/produto2.png" alt="Pré treino2">
+      <h2>Prétreino mosntro</h2>
+      <p>R$179,99</p>
+      <Button onclick="adicionarAoCarrinho('Pré treino', 199.90)">Adicionado ao carrinho</Button>
+    </div>
+    <div class="oculto" id="carrinho_detalhes">
+      <button onclick="finalizarCompra()" class="finalizar">Finalizar compra</button>
+
+      <h3>Carrinho de compras</h3>
+      <ul id="lista_carrinho"></ul>
+      <p><strong>total</strong> R$ <span id="total">0,00</span></p>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
