@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Localização</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f4f4f4;
+    }
+
+    header {
+      background-color: #004080;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    section {
+      text-align: center;
+      padding: 2rem;
+    }
+
+    iframe {
+      width: 90%;
+      height: 450px;
+      border: 0;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      margin-top: 1rem;
+    }
+
+    .btn-voltar {
+      display: inline-block;
+      margin-top: 2rem;
+      text-decoration: none;
+      background-color: #007BFF;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border-radius: 8px;
+      transition: background-color 0.3s;
+    }
+
+    .btn-voltar:hover {
+      background-color: #0056b3;
+    }
+
+    /* Botões flutuantes */
+    .floating-btn {
+      position: fixed;
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      z-index: 999;
+      text-decoration: none;
+    }
+
+    .whatsapp {
+      background-color: #25D366;
+      bottom: 20px;
+      right: 20px;
+    }
+
+    .rota {
+      background-color: #007BFF;
+      bottom: 90px;
+      right: 20px;
+    }
+
+    .floating-btn:hover {
+      opacity: 0.9;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Onde Estamos</h1>
+  </header>
+
+  <section>
+    <p>Você pode nos visitar no endereço abaixo. Esperamos por você!</p>
+
+    <!-- Mapa Google Maps -->
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.588808566954!2d-46.656571284558775!3d-23.584131384668317!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c728b96e35%3A0x1f149f4a3b7b4899!2sAv.%20Paulista%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1712513046886!5m2!1spt-BR!2sbr"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+
+    <br>
+    <a href="index.html" class="btn-voltar">← Voltar ao Início</a>
+  </section>
+
+  <!-- Botão flutuante para rotas -->
+  <a href="https://www.google.com/maps/dir/?api=1&destination=-23.5841313,-46.6565712" target="_blank" class="floating-btn rota" title="Ver Rotas">🗺</a>
+
+  <!-- Botão flutuante para WhatsApp -->
+  <a href="https://wa.me/5511999999999" target="_blank" class="floating-btn whatsapp" title="Chamar no WhatsApp">💬</a>
+
+</body>
+</html>

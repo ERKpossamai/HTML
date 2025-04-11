@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Localização</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    header {
+      background-color: #222;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    section {
+      text-align: center;
+      padding: 2rem;
+    }
+
+    iframe {
+      width: 90%;
+      height: 450px;
+      border: 0;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      margin-top: 1rem;
+    }
+
+    .buttons {
+      margin-top: 2rem;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .btn {
+      background-color: #007BFF;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #222;
+    }
+
+
+    .btn.whatsapp {
+      background-color: #25D366;
+    }
+
+    .btn.whatsapp:hover {
+      background-color: #1ebe57;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Onde Estamos</h1>
+  </header>
+
+  <section>
+    <p>Você pode nos visitar no endereço abaixo. Esperamos por você!</p>
+
+    <!-- Mapa incorporado do Google Maps -->
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3617.576193090694!2d-53.436786325363926!3d-24.946503613935842!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94f3d5eb644682fd%3A0x8526e56ec7947b24!2sCatua%C3%AD%20Shopping%20Cascavel!5e0!3m2!1spt-BR!2sbr!4v1744111237859!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+
+    <!-- Botões -->
+    <div class="buttons">
+      <a href="index.html" class="btn">← Voltar ao Início</a>
+      <a href="https://www.google.com/maps/dir/?api=1&destination=-23.5841313,-46.6565712"
+       class="btn" target="_blank">🗺 Ver Rotas</a>
+      <a href="https://wa.me/44997396371" class="btn whatsapp" target="_blank">💬 Chamar no WhatsApp</a>
+    </div>
+  </section>
+
+</body>
+</html>
+
