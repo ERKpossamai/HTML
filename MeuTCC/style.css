@@ -370,6 +370,16 @@ header h1:hover::before {
     .input-box {
         margin: 20px 0;
     }
+
+    main {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #carrinho_detalhes {
+        right: 10px;
+        width: 90%;
+    }
 }
 
 /* 📱 Responsividade para celulares */
@@ -455,4 +465,112 @@ section {
 section h2 {
     text-align: center;
     color: #e54004;
+}
+
+
+#produto button {
+    padding: 0.6rem 1rem;
+    background-color: #00aa55;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background-color: #007f3e;
+}
+
+.carrinho {
+    position: relative;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.contador {
+    background-color: red;
+    color: white;
+    font-size: 0.8rem;
+    padding: 2px 6px;
+    border-radius: 50%;
+    position: absolute;
+    top: -8px;
+    right: -12px;
+}
+
+/* Produtos */
+main {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    padding: 2rem;
+    flex-wrap: wrap;
+}
+
+.produtos_car {
+    background-color: white;
+    border-radius: 12px;
+    padding: 1rem;
+    width: 250px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+.produtos_car:hover {
+    transform: translateY(-5px);
+}
+
+.produtos_car img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.produtos_car h2 {
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+}
+
+.preco {
+    font-weight: bold;
+    margin-bottom: 0.8rem;
+    color: #00aa55;
+}
+
+/* Carrinho */
+#carrinho_detalhes {
+    background-color: white;
+    position: fixed;
+    top: 80px;
+    right: 20px;
+    width: 300px;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    display: none;
+    z-index: 100;
+}
+
+#carrinho_detalhes ul {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+#carrinho_detalhes li {
+    margin-bottom: 0.5rem;
+}
+
+.finalizar {
+    width: 100%;
+    background-color: #0077cc;
+}
+
+.finalizar:hover {
+    background-color: #005999;
+}
+
+.oculto {
+    display: none;
 }
