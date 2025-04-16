@@ -75,3 +75,9 @@ function toggleCarrinho() {
 }
 
 atualizarCarrinho();
+
+function comprarProduto(nome, preco) {
+  const params = new URLSearchParams({ nome, preco });
+  window.location.href = `pagina-destino.html?${params.toString()}`;
+}
+

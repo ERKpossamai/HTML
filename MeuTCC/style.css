@@ -618,38 +618,45 @@ main {
     text-decoration: none;
 }
 
-.carrinho_detalhes {
-    background-color: white;
-    position: fixed;
-    top: 80px;
-    right: 20px;
-    width: 300px;
-    padding: 1rem;
+#carrinho-detalhes {
+    background-color: #fff;
+    padding: 20px;
+    margin-top: 30px;
     border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    display: none;
-    z-index: 10000;
-}
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+  }
 
-.carrinho_detalhes ul {
-    list-style: none;
-    padding: 0;
-    margin: 1rem 0;
-}
-
-.carrinho_detalhes li {
-    margin-bottom: 0.5rem;
-}
-
-.finalizar {
-    width: 100%;
-    background-color: #0077cc;
-}
-
-.finalizar:hover {
-    background-color: #005999;
-}
-
-.oculto {
-    display: none;
-}
+  .remover {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 4px 8px;
+    margin-left: 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    cursor: pointer;
+  }
+  
+  .remover:hover {
+    background-color: #c82333;
+  }
+  
+  .finalizar {
+    background-color: #ffc107;
+    color: #333;
+    padding: 10px 18px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .finalizar:hover {
+    background-color: #e0a800;
+  }
+  

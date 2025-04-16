@@ -7,6 +7,12 @@
   <title>Produtos</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" href="img/logo.png" type="image/x-icon" />
+  <script src="script.js">
+    function comprarProduto(nome, preco) {
+      localStorage.setItem('produtoSelecionado', JSON.stringify({ nome, preco }));
+      window.location.href = 'detalhes.html'; // Vai para a próxima página
+    }
+  </script>
 </head>
 <body>
   <header>
@@ -50,15 +56,14 @@
     </div>
   </main>
 
-  <!-- Carrinho Detalhado -->
-  <div id="carrinho-detalhes" class="oculto">
-    <h3>Carrinho de Compras</h3>
+   <!-- Carrinho Detalhado -->
+   <div id="carrinho-detalhes" class="oculto">
     <ul id="lista-carrinho"></ul>
     <p><strong>Total:</strong> R$ <span id="total">0.00</span></p>
     <button onclick="finalizarCompra()" class="finalizar">Finalizar Compra</button>
   </div>
-
   <!-- Script principal -->
-  <script src="script.js"></script>
+
+  </script>
 </body>
 </html>
