@@ -21,7 +21,9 @@
             <a href="login.html">Login</a>
         </nav>
         <div class="carrinho" onclick="toggleCarrinho()" aria-label="Carrinho de compras">
-            🛒<span class="contador">0</span>
+            <a href="carrinho.html">
+                🛒<span class="contador">0</span>
+              </a>
         </div>
     </header>
     <main>
@@ -40,20 +42,25 @@
         </div>
 
         <div class="produtos_car">
-          <img src="img/produto3.png" alt="Pré-treino monstro">
+          <img src="img/produto3.png" alt="Combo monstro">
           <h2>Combo monstro</h2>
           <p class="preco">R$209,99</p>
           <button onclick="adicionarAoCarrinho('Pré-treino monstro', 179.99)">Adicionar ao carrinho</button>
       </div>
     </main>
 
-    <div class="oculto" id="carrinho_detalhes">
+    <div class="oculto" class="carrinho_detalhes">
         <h3>Carrinho de compras</h3>
         <ul id="lista_carrinho"></ul>
         <p><strong>Total:</strong> R$ <span id="total">0,00</span></p>
         <button onclick="finalizarCompra()" class="finalizar">Finalizar compra</button>
     </div>
 
-    <script src="script.js"></script>
+    <script src="script.js">
+         // Função para adicionar um produto ao carrinho com alerta
+         function adicionarAoCarrinho(produto) {
+            alert(`${produto} foi adicionado ao carrinho!`);
+        }
+    </script>
 </body>
 </html>

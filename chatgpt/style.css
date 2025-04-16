@@ -1,4 +1,4 @@
-/* Reset geral */
+/* 🔁 Reset geral de margens, paddings e box-sizing */
 * {
     margin: 0;
     padding: 0;
@@ -6,6 +6,7 @@
     font-family: 'Poppins', sans-serif;
 }
 
+/* 🌌 Estilo base do body com imagem de fundo centralizada e coberta */
 body {
     display: flex;
     justify-content: center;
@@ -14,7 +15,7 @@ body {
     background: url('img/fundo.png') no-repeat center center/cover;
 }
 
-/* Cabeçalho */
+/* 🔝 Cabeçalho fixo no topo com espaçamento interno e alinhamento */
 header {
     position: fixed;
     top: 0;
@@ -26,14 +27,41 @@ header {
     align-items: center;
     z-index: 99;
 }
-
-.logo {
+header h1 {
     font-size: 2rem;
-    color: #fff;
-    user-select: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: transparent;
+    -webkit-text-stroke: 1px #c73102;
+    position: relative;
 }
 
-/* Navegação */
+header h1::before {
+    content: "Estação do corpo";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    overflow: hidden;
+    color: #c73102;
+    white-space: nowrap;
+    transition: width 0.3s ease-in-out;
+}
+
+header h1:hover::before {
+    width: 100%;
+    filter: drop-shadow(0 0 25px #e54004);
+}
+
+/* 🖼️ Estilo da imagem do logo */
+.logo-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* 🔗 Estilização dos links de navegação */
 .navegation a {
     position: relative;
     font-size: 1.1rem;
@@ -43,6 +71,7 @@ header {
     margin-left: 40px;
 }
 
+/* ✨ Animação sublinhada ao passar o mouse nos links */
 .navegation a::after {
     content: '';
     position: absolute;
@@ -56,11 +85,12 @@ header {
     transition: transform .5s;
 }
 
+/* Mostrar sublinhado ao hover */
 .navegation a:hover::after {
     transform: scaleX(1);
 }
 
-/* Botão de Login */
+/* 🔐 Botão para login com transição suave ao hover */
 .navegation .btnLogin-popup {
     width: 130px;
     height: 50px;
@@ -81,7 +111,7 @@ header {
     color: #e54004;
 }
 
-/* Formulário */
+/* 📦 Container principal do formulário com efeito blur e sombra */
 .wrapper {
     position: relative;
     width: 400px;
@@ -94,21 +124,54 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: 0.3s;
+    transition: 0.5s ease-in-out;
+    overflow: hidden;
 }
 
+/* ⬆️ Quando wrapper está ativo (ex: modo registro), aumenta altura */
+.wrapper.active {
+    height: 520px;
+}
+
+/* 📄 Box interno com padding */
 .wrapper .form-box {
     width: 100%;
     padding: 40px;
 }
 
+/* ↔️ Formulário de login visível por padrão */
+.wrapper .form-box.login {
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
+
+/* ➡️ Esconde o login quando wrapper está ativo */
+.wrapper.active .form-box.login {
+    transition: none;
+    transform: translateX(-400px);
+}
+
+/* ↔️ Formulário de registro escondido inicialmente */
+.wrapper .form-box.register {
+    position: absolute;
+    transition: none;
+    transform: translateX(400px);
+}
+
+
+.wrapper.active .form-box.register {
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
+
+/* 📝 Título do formulário */
 .form-box h2 {
     font-size: 2rem;
     color: #e54004;
     text-align: center;
 }
 
-/* Input Box */
+/* 🧾 Caixa de entrada com efeito de label flutuante */
 .input-box {
     position: relative;
     width: 100%;
@@ -129,6 +192,8 @@ header {
     transition: .5s;
 }
 
+
+/* 🔼 Move label para cima ao focar ou digitar */
 .input-box input:focus~label,
 .input-box input:valid~label {
     top: -5px;
@@ -146,6 +211,7 @@ header {
     padding: 0 35px 0 5px;
 }
 
+/* 🧷 Ícone no campo de entrada */
 .input-box .icon {
     position: absolute;
     right: 8px;
@@ -154,7 +220,7 @@ header {
     line-height: 57px;
 }
 
-/* Checkbox e Esqueceu a senha */
+/* ☑️ Checkbox e link "esqueceu a senha" */
 .remember-forgot {
     font-size: .9rem;
     color: #e54004;
@@ -164,7 +230,7 @@ header {
 }
 
 .remember-forgot label input {
-    accent-color: #e54004;
+    caret-color: #e54004;
     margin-right: 3px;
 }
 
@@ -177,7 +243,7 @@ header {
     text-decoration: underline;
 }
 
-/* Botão Login */
+/* 🔓 Botão de envio do formulário */
 .btn {
     width: 100%;
     height: 45px;
@@ -196,7 +262,7 @@ header {
     background: #c73102;
 }
 
-/* Link para Registro */
+/* 🔗 Link para trocar entre login e registro */
 .login-register {
     font-size: .9rem;
     color: #e54004;
@@ -215,7 +281,76 @@ header {
     text-decoration: underline;
 }
 
-/* 🔹 RESPONSIVIDADE */
+/* 💳 Estilo do container dos planos de inscrição */
+.corpo_planos {
+    position: relative;
+    width: 400px;
+    height: 440px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, .5);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    display: flex;
+    flex-direction: column; /* Importante: deixa os elementos em coluna */
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s ease-in-out;
+    overflow: hidden;
+}
+
+.titulo_pl {
+    font-size: 2.2rem;
+    color: #e54004;
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    text-transform: uppercase;
+}
+
+.inf_pl {
+    margin-top: 20px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.inf_pl h3 {
+    color: #e54004;
+    text-align: center;
+    margin-bottom: 5px;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.inf_pl ul {
+    list-style: none;
+    padding: 0;
+}
+
+.inf_pl li {
+    color: #fff;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.parent {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 11px;
+    grid-row-gap: 0px;
+    }
+
+/* 📱 Responsividade para tablets */
 @media (max-width: 768px) {
     header {
         padding: 20px 50px;
@@ -235,8 +370,19 @@ header {
     .input-box {
         margin: 20px 0;
     }
+
+    main {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #carrinho_detalhes {
+        right: 10px;
+        width: 90%;
+    }
 }
 
+/* 📱 Responsividade para celulares */
 @media (max-width: 480px) {
     header {
         flex-direction: column;
@@ -258,4 +404,173 @@ header {
         height: auto;
         padding: 15px;
     }
+}
+
+/* Local do mini mapa */
+iframe {
+    width: 90%;
+    height: 450px;
+    border: 0;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 1rem;
+}
+
+.buttons {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+.lc {
+    background-color:#c73102;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+.lc:hover {
+    background-color: #222;
+}
+.buttons .whatsapp {
+    background-color: #25D366;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    color: #222;
+}
+
+.buttons .whatsapp:hover {
+    background-color: #1ebe57;
+    text-decoration: none;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    color: #222;
+}
+
+section {
+    text-align: center;
+    padding: 2rem;
+}
+
+section h2 {
+    text-align: center;
+    color: #e54004;
+}
+
+
+#produto button {
+    padding: 0.6rem 1rem;
+    background-color: #00aa55;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background-color: #007f3e;
+}
+
+.carrinho {
+    position: relative;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.contador {
+    background-color: red;
+    color: white;
+    font-size: 0.8rem;
+    padding: 2px 6px;
+    border-radius: 50%;
+    position: absolute;
+    top: -8px;
+    right: -12px;
+}
+
+/* Produtos */
+main {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    padding: 2rem;
+    flex-wrap: wrap;
+}
+
+.produtos_car {
+    background-color: white;
+    border-radius: 12px;
+    padding: 1rem;
+    width: 250px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+.produtos_car:hover {
+    transform: translateY(-5px);
+}
+
+.produtos_car img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.produtos_car h2 {
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+}
+
+.preco {
+    font-weight: bold;
+    margin-bottom: 0.8rem;
+    color: #00aa55;
+}
+
+/* Carrinho */
+#carrinho_detalhes {
+    background-color: white;
+    position: fixed;
+    top: 80px;
+    right: 20px;
+    width: 300px;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    display: none;
+    z-index: 100;
+}
+
+#carrinho_detalhes ul {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+#carrinho_detalhes li {
+    margin-bottom: 0.5rem;
+}
+
+.finalizar {
+    width: 100%;
+    background-color: #0077cc;
+}
+
+.finalizar:hover {
+    background-color: #005999;
+}
+
+.oculto {
+    display: none;
 }

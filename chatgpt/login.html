@@ -1,60 +1,142 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="stylesheet" href="Style.css"> 
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Estação do Corpo</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins&display=swap">
 </head>
 <body>
-    <header>
-        <h2 class="logo">logo</h2>
-        <nav class="navegation">
-            <a href="#">Inicio</a>
-            <a href="#">Planos</a>
-            <a href="#">Personais</a>
-            <a href="#">Contatos</a>
-            <button class="btnLogin-popup">Login</button>
-        </nav>
-    </header>
 
-    <div class="wrapper">
-        <div class="form-box login">
-            <h2>Login</h2>
-            <form action="#">
-                <div class="input-box">
-                    <span class="icon">
-                        <ion-icon name="mail"></ion-icon>
-                    </span>
-                    <input type="email" required>
-                    <label>Email</label>
-                </div>
-                <div class="input-box">
-                    <span class="icon">
-                        <ion-icon name="lock-closed"></ion-icon>
-                    </span>
-                    <input type="password" required>
-                    <label>Senha</label>
-                </div>
-                <div class="remember-forgot">
-                    <label for="remember"><input type="checkbox" id="remember"> Lembrar de mim</label>
-                    <a href="#">Esqueceu sua senha?</a>
-                </div>
-                <button type="submit" class="btn">Login</button>
-                <div class="login-register">
-                    <p>Não tem uma conta?<a href="#" class="register-link">Registrar</a></p>
-                </div>
-            </form>
+  <header>
+    <img src="img/logo.png" alt="Logo" class="logo-img">
+    <h1>Estação do corpo</h1>
+    <nav class="navegation">
+      <a href="#planos">Planos</a>
+      <a href="#produtos">Produtos</a>
+      <button class="btnLogin-popup">Login</button>
+    </nav>
+  </header>
+
+  <!-- Login e Registro -->
+  <div class="wrapper" id="formWrapper">
+    <div class="form-box login">
+      <h2>Login</h2>
+      <form>
+        <div class="input-box">
+          <span class="icon">👤</span>
+          <input type="email" required />
+          <label>Email</label>
         </div>
+        <div class="input-box">
+          <span class="icon">🔒</span>
+          <input type="password" required />
+          <label>Senha</label>
+        </div>
+        <div class="remember-forgot">
+          <label><input type="checkbox">Lembrar</label>
+          <a href="#">Esqueceu a senha?</a>
+        </div>
+        <button type="submit" class="btn">Entrar</button>
+        <div class="login-register">
+          <p>Não tem uma conta? <a href="#" id="registerLink">Registrar</a></p>
+        </div>
+      </form>
     </div>
 
+    <div class="form-box register">
+      <h2>Registro</h2>
+      <form>
+        <div class="input-box">
+          <span class="icon">👤</span>
+          <input type="text" required />
+          <label>Nome</label>
+        </div>
+        <div class="input-box">
+          <span class="icon">📧</span>
+          <input type="email" required />
+          <label>Email</label>
+        </div>
+        <div class="input-box">
+          <span class="icon">🔒</span>
+          <input type="password" required />
+          <label>Senha</label>
+        </div>
+        <button type="submit" class="btn">Registrar</button>
+        <div class="login-register">
+          <p>Já tem uma conta? <a href="#" id="loginLink">Login</a></p>
+        </div>
+      </form>
+    </div>
+  </div>
 
+  <!-- Planos -->
+  <section id="planos">
+    <div class="parent">
+      <div class="corpo_planos">
+        <h2 class="titulo_pl">Plano Básico</h2>
+        <div class="inf_pl">
+          <h3>Benefícios:</h3>
+          <ul>
+            <li>✅ Acesso à academia</li>
+            <li>✅ Treinos personalizados</li>
+            <li>✅ Avaliação física</li>
+          </ul>
+        </div>
+      </div>
+      <div class="corpo_planos">
+        <h2 class="titulo_pl">Plano Intermediário</h2>
+        <div class="inf_pl">
+          <h3>Benefícios:</h3>
+          <ul>
+            <li>✅ Tudo do básico</li>
+            <li>✅ Aulas coletivas</li>
+            <li>✅ Nutricionista</li>
+          </ul>
+        </div>
+      </div>
+      <div class="corpo_planos">
+        <h2 class="titulo_pl">Plano Premium</h2>
+        <div class="inf_pl">
+          <h3>Benefícios:</h3>
+          <ul>
+            <li>✅ Todos os anteriores</li>
+            <li>✅ Personal trainer</li>
+            <li>✅ Massagem relaxante</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- Produtos -->
+  <section id="produtos">
+    <h2>Produtos em destaque</h2>
+    <main>
+      <div class="produtos_car">
+        <img src="img/produto1.png" alt="Produto 1">
+        <h2>Suplemento X</h2>
+        <div class="preco">R$ 99,90</div>
+        <button onclick="adicionarCarrinho('Suplemento X', 99.90)">Adicionar ao carrinho</button>
+      </div>
+      <div class="produtos_car">
+        <img src="img/produto2.png" alt="Produto 2">
+        <h2>Camiseta DryFit</h2>
+        <div class="preco">R$ 59,90</div>
+        <button onclick="adicionarCarrinho('Camiseta DryFit', 59.90)">Adicionar ao carrinho</button>
+      </div>
+    </main>
+  </section>
 
-    <script src="script.js"></script>
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-    
+  <!-- Carrinho -->
+  <div id="carrinho_detalhes">
+    <h3>Seu carrinho</h3>
+    <ul id="itensCarrinho"></ul>
+    <button class="btn finalizar">Finalizar Compra</button>
+  </div>
+
 </body>
 </html>

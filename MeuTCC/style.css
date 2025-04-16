@@ -539,7 +539,7 @@ main {
 }
 
 /* Carrinho */
-#carrinho_detalhes {
+.carrinho_detalhes {
     background-color: white;
     position: fixed;
     top: 80px;
@@ -549,16 +549,16 @@ main {
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     display: none;
-    z-index: 100;
+    z-index: 10000;
 }
 
-#carrinho_detalhes ul {
+.carrinho_detalhes ul {
     list-style: none;
     padding: 0;
     margin: 1rem 0;
 }
 
-#carrinho_detalhes li {
+.carrinho_detalhes li {
     margin-bottom: 0.5rem;
 }
 
