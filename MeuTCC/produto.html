@@ -26,6 +26,18 @@
               </a>
         </div>
     </header>
+    <div class="produtoParent">
+        <div class="div1"> 
+            <ul>
+                <li>Teste 1</li>
+                <li>Teste 1</li>
+                <li>Teste 1</li>
+                <li>Teste 1</li>
+                <li>Teste 1</li>
+                <li>Teste 1</li>
+            </ul>
+        </div>
+        </div>
     <main>
         <div class="produtos_car">
             <img src="img/produto1.png" alt="Pré-treino em oferta">
@@ -45,11 +57,30 @@
           <img src="img/produto3.png" alt="Combo monstro">
           <h2>Combo monstro</h2>
           <p class="preco">R$209,99</p>
-          <button onclick="adicionarAoCarrinho('Pré-treino monstro', 179.99)">Adicionar ao carrinho</button>
+          <button onclick="adicionarAoCarrinho('Combo monstro', 209,99)">Adicionar ao carrinho</button>
       </div>
+      <p></p>
+      <div class="produtos_car">
+        <img src="img/creatina1.png" alt="Creatina">
+        <h2>Creatina</h2>
+        <p class="preco">R$99,99</p>
+        <button onclick="adicionarAoCarrinho('Creatina', 99,99)">Adicionar ao carrinho</button>
+    </div>
+    <div class="produtos_car">
+        <img src="img/creatina2.png" alt="Creatina em oferta">
+        <h2>Creatina em oferta</h2>
+        <p class="preco">R$74,99</p>
+        <button onclick="adicionarAoCarrinho('Creatina em oferta', 74,99)">Adicionar ao carrinho</button>
+    </div>
+    <div class="produtos_car">
+        <img src="img/creatina3.png" alt="Creatina1">
+        <h2>Creatina</h2>
+        <p class="preco">R$99,99</p>
+        <button onclick="adicionarAoCarrinho('Creatina1', 99,99)">Adicionar ao carrinho</button>
+    </div>
     </main>
 
-    <div class="oculto" class="carrinho_detalhes">
+    <div class="oculto carrinho_detalhes">
         <h3>Carrinho de compras</h3>
         <ul id="lista_carrinho"></ul>
         <p><strong>Total:</strong> R$ <span id="total">0,00</span></p>
