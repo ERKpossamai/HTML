@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Loja de Sapatos</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Loja de Sapatos</h1>
+    <div class="carrinho" onclick="toggleCarrinho()">
+      🛒 <span id="contador">0</span>
+    </div>
+  </header>
+
+  <main>
+    <div class="produto">
+    <img src="sapatoP.jfif" alt="Sapato Social Preto">
+      <h2>Tênis Esportivo</h2>
+      <p>R$ 199,90</p>
+      <button onclick="adicionarAoCarrinho('Tênis Esportivo', 199.90)">Adicionar ao Carrinho</button>
+    </div>
+
+    <div class="produto">
+    <img src="branco.png" alt="Tênis Casual Branco">
+      <h2>Bota Casual</h2>
+      <p>R$ 249,90</p>
+      <button onclick="adicionarAoCarrinho('Bota Casual', 249.90)">Adicionar ao Carrinho</button>
+    </div>
+  </main>
+
+  <div id="carrinho-detalhes" class="oculto">
+    <button onclick="finalizarCompra()" class="finalizar">Finalizar Compra</button>
+
+    <h3>Carrinho de Compras</h3>
+    <ul id="lista-carrinho"></ul>
+    <p><strong>Total:</strong> R$ <span id="total">0.00</span></p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

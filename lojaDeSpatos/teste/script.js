@@ -1,24 +1,3 @@
-const wrapper = document.querySelector('.wrapper');
-const loginLink = document.querySelector('.login-link');
-const registerLink = document.querySelector('.register-link');
-const loginForm = document.querySelector('.form-box.login');
-const registerForm = document.querySelector('.form-box.register');
-const btnLoginPopup = document.querySelector('.btnLogin-popup');
-
-if (registerLink) {
-  registerLink.addEventListener('click', () => {
-    wrapper.classList.add('active');
-  });
-}
-
-if (loginLink) {
-  loginLink.addEventListener('click', () => {
-    setTimeout(() => {
-      wrapper.classList.remove('active');
-    }, 300);
-  });
-}
-
 let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
 let total = parseFloat(localStorage.getItem('total')) || 0;
 
@@ -49,8 +28,6 @@ function atualizarCarrinho() {
   const contador = document.getElementById('contador');
   const totalSpan = document.getElementById('total');
 
-  if (!lista || !contador || !totalSpan) return;
-
   lista.innerHTML = '';
 
   carrinho.forEach((item, index) => {
@@ -74,4 +51,4 @@ function toggleCarrinho() {
   box.classList.toggle('oculto');
 }
 
-atualizarCarrinho();
+atualizarCarrinho(); // Carrega dados salvos ao abrir a página
