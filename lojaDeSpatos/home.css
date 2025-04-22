@@ -4,7 +4,6 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, sans-serif;
-    margin-top: 0px;
 }
 
 body {
@@ -79,3 +78,11 @@ footer {
     width: 100%;
     bottom: 0;
 }
+
+.logo {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+
+}
+
