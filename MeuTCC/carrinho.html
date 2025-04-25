@@ -5,8 +5,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Carrinho</title>
-<link rel="stylesheet" href="style.css">
-<link rel="icon" href="img/logo.png" type="image/x-icon">
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="img/logo.png" type="image/x-icon" />
 <script src="script.js">
 // Carrega carrinho existente ou cria novo
 let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
@@ -41,5 +41,8 @@ window.location.href = 'carrinho.html';
    <button onclick="finalizarCompra()" class="finalizar">Finalizar Compra</button>
   </div>
 
+  <footer>
+    &copy; 2025 Estação do corpo. Todos os direitos reservados a (L J)
+  </footer>
 </body>
 </html>

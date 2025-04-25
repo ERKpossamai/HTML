@@ -385,64 +385,6 @@ header h3 {
     gap: 10px;
 }
 
-/* 📱 Responsividade para tablets */
-@media (max-width: 768px) {
-    header {
-        padding: 20px 50px;
-    }
-
-    .navegation a {
-        font-size: 1rem;
-        margin-left: 20px;
-    }
-
-    .wrapper {
-        width: 90%;
-        height: auto;
-        padding: 20px;
-    }
-
-    .input-box {
-        margin: 20px 0;
-    }
-
-    main {
-        flex-direction: column;
-        align-items: center;
-        display: grid;  
-        margin-top: 50vw;
-    }
-
-    .carrinho_detalhes {
-        right: 10px;
-        width: 90%;
-    }
-}
-
-/* 📱 Responsividade para celulares */
-@media (max-width: 480px) {
-    header {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .navegation {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .btnLogin-popup {
-        margin-top: 10px;
-    }
-
-    .wrapper {
-        width: 95%;
-        height: auto;
-        padding: 15px;
-    }
-}
-
 /* Local do mini mapa */
 iframe {
     width: 90%;
@@ -469,7 +411,8 @@ iframe {
     font-size: 16px;
     text-decoration: none;
     transition: background-color 0.3s;
-}
+    
+  }
 .lc:hover {
     background-color: #222;
 }
@@ -498,6 +441,14 @@ section {
     text-align: center;
     padding: 2rem;
 }
+.section1 {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
 
 section h2 {
     text-align: center;
@@ -519,80 +470,7 @@ button:hover {
     background-color: #007f3e;
 }
 
-.carrinho {
-    position: relative;
-    font-size: 1.5rem;
-    cursor: pointer;
-    text-decoration: none;
-    color: inherit; 
-    cursor: pointer;
-
-}
-
-#contador {
-    background-color: red;
-    color: white;
-    font-size: 0.8rem;
-    padding: 2px 6px;
-    border-radius: 50%;
-    position: absolute;
-    top: -8px;
-    right: -12px;
-    text-decoration: none;
-}
-
-/* Produtos */
-main {
-    display: flex;
-    gap: 2rem;
-    justify-content: center;
-    padding: 2rem;
-    flex-wrap: wrap;
-    margin-bottom: 3rem;
-}
-
-.produtos_car {
-    background-color: white;
-    border-radius: 12px;
-    padding: 1rem;
-    width: 250px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    transition: transform 0.2s;
-}
-
-.produtos_car button {
-    background-color: #00aa55;
-    color: white;
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.produtos_car button:hover {
-    background-color: #008d47;
-}
-
-.produtos_car img {
-    width: 100%;
-    border-radius: 10px;
-}
-
-.produtos_car h2 {
-    font-size: 1.2rem;
-    margin: 0.5rem 0;
-}
-
-.preco {
-    font-weight: bold;
-    margin-bottom: 0.8rem;
-    color: #00aa55;
-}
-
 /* Carrinho */
-
 .carrinho {
     position: relative;
     font-size: 1.5rem;
@@ -607,6 +485,18 @@ main {
 }
 
 .contador {
+    background-color: red;
+    color: white;
+    font-size: 0.8rem;
+    padding: 2px 6px;
+    border-radius: 50%;
+    position: absolute;
+    top: -8px;
+    right: -12px;
+    text-decoration: none;
+}
+
+#contador {
     background-color: red;
     color: white;
     font-size: 0.8rem;
@@ -659,4 +549,11 @@ main {
   .finalizar:hover {
     background-color: #e0a800;
   }
-  
+
+  footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: #222;
+    color: white;
+    margin-top: 2rem;
+  }
