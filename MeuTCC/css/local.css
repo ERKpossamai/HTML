@@ -9,7 +9,6 @@
 }
 
 body {
-  display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
@@ -261,6 +260,10 @@ button:hover {
 
 .finalizar:hover {
   background-color: #e0a800;
+}
+
+section {
+  margin-top: 50px;
 }
 
 footer {
