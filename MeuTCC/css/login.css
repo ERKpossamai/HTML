@@ -409,5 +409,10 @@ footer {
   padding: 2rem;
   background-color: #222;
   color: white;
-  margin-top: 2rem;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 10px;
+  text-align: center;
 }
