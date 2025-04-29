@@ -1,6 +1,7 @@
-/* ==========================
+/* =====================================
    🔁 RESET E BASE GLOBAL
-========================== */
+   Aplicação de reset para garantir consistência entre navegadores
+===================================== */
 * {
   margin: 0;
   padding: 0;
@@ -16,9 +17,10 @@ body {
 }
 
 
-/* ==========================
- 🔝 CABEÇALHO E NAVEGAÇÃO
-========================== */
+/* =====================================
+   🔝 CABEÇALHO E NAVEGAÇÃO
+   Estilos para o cabeçalho e links de navegação
+===================================== */
 header {
   position: fixed;
   top: 0;
@@ -106,7 +108,11 @@ header h1:hover::before {
   color: #e54004;
 }
 
-/* Local do mini mapa */
+
+/* =====================================
+   📍 LOCAL DO MINI MAPA
+   Estilos para o mini mapa integrado na página
+===================================== */
 iframe {
   width: 90%;
   height: 450px;
@@ -116,6 +122,11 @@ iframe {
   margin-top: 1rem;
 }
 
+
+/* =====================================
+   🧩 BOTÕES DE AÇÃO
+   Estilos para os botões de ação na página
+===================================== */
 .buttons {
   margin-top: 2rem;
   display: flex;
@@ -123,8 +134,9 @@ iframe {
   flex-wrap: wrap;
   gap: 1rem;
 }
+
 .lc {
-  background-color:#c73102;
+  background-color: #c73102;
   color: white;
   padding: 0.8rem 1.5rem;
   border: none;
@@ -132,11 +144,12 @@ iframe {
   font-size: 16px;
   text-decoration: none;
   transition: background-color 0.3s;
-  
 }
+
 .lc:hover {
   background-color: #222;
 }
+
 .buttons .whatsapp {
   background-color: #25D366;
   text-decoration: none;
@@ -158,9 +171,15 @@ iframe {
   color: #222;
 }
 
+
+/* =====================================
+   🧩 SEÇÕES E BOTÕES DE PRODUTOS
+   Estilos para as seções e botões relacionados aos produtos
+===================================== */
 section {
   text-align: center;
   padding: 2rem;
+  margin-top: 50px;
 }
 
 section h2 {
@@ -182,13 +201,17 @@ button:hover {
   background-color: #007f3e;
 }
 
-/* Carrinho */
+
+/* =====================================
+   🛒 CARRINHO DE COMPRAS
+   Estilos para o carrinho de compras e seus detalhes
+===================================== */
 .carrinho {
   position: relative;
   font-size: 1.5rem;
   cursor: pointer;
   text-decoration: none;
-  color: inherit; 
+  color: inherit;
 }
 
 .carrinho a {
@@ -225,7 +248,7 @@ button:hover {
   padding: 20px;
   margin-top: 30px;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   width: 400px;
   margin-left: auto;
   margin-right: auto;
@@ -262,10 +285,11 @@ button:hover {
   background-color: #e0a800;
 }
 
-section {
-  margin-top: 50px;
-}
 
+/* =====================================
+   🦶 RODAPÉ
+   Estilos para o rodapé da página
+===================================== */
 footer {
   text-align: center;
   padding: 2rem;
@@ -279,32 +303,39 @@ footer {
   text-align: center;
 }
 
+
+/* =====================================
+   📱 RESPONSIVIDADE
+   Ajustes para diferentes tamanhos de tela
+===================================== */
+
+/* Tablets e telas pequenas */
 @media (max-width: 600px) {
   section {
     padding: 2rem 1rem;
   }
 }
 
-/* 📱 Responsividade para celulares */
+/* 📱 Celulares */
 @media (max-width: 480px) {
   header {
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 
   .navegation {
-      flex-direction: column;
-      gap: 10px;
+    flex-direction: column;
+    gap: 10px;
   }
 
   .btnLogin-popup {
-      margin-top: 10px;
+    margin-top: 10px;
   }
 
   .wrapper {
-      width: 95%;
-      height: auto;
-      padding: 15px;
+    width: 95%;
+    height: auto;
+    padding: 15px;
   }
 }
