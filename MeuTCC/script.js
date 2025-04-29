@@ -1,4 +1,6 @@
-// Login / Registro
+// ===========================================
+// 🔐 Login / Registro - Alternância de Tela
+// ===========================================
 const wrapper = document.querySelector('.wrapper');
 const loginLink = document.querySelector('.login-link');
 const registerLink = document.querySelector('.register-link');
@@ -17,8 +19,16 @@ if (loginLink) {
   });
 }
 
-// Carrega carrinho e total do localStorage
-let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+// ===========================================
+// 🛒 Carrinho - Inicialização Segura
+// ===========================================
+let carrinho = [];
+try {
+  carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+} catch (e) {
+  console.warn('Erro ao carregar carrinho do localStorage:', e);
+  carrinho = [];
+}
 
 function salvarCarrinho() {
   localStorage.setItem('carrinho', JSON.stringify(carrinho));
@@ -36,9 +46,11 @@ function adicionarAoCarrinho(nome, preco) {
 }
 
 function removerItem(index) {
-  carrinho.splice(index, 1);
-  salvarCarrinho();
-  atualizarCarrinho();
+  if (confirm('Deseja remover este item do carrinho?')) {
+    carrinho.splice(index, 1);
+    salvarCarrinho();
+    atualizarCarrinho();
+  }
 }
 
 function alterarQuantidade(index, delta) {
@@ -52,6 +64,10 @@ function alterarQuantidade(index, delta) {
 }
 
 function finalizarCompra() {
+  if (carrinho.length === 0) {
+    alert('Seu carrinho está vazio!');
+    return;
+  }
   alert('Compra finalizada com sucesso!');
   carrinho = [];
   salvarCarrinho();
@@ -69,16 +85,16 @@ function atualizarCarrinho() {
   let total = 0;
 
   carrinho.forEach((item, index) => {
-    const li = document.createElement('li');
     const subtotal = item.preco * item.qtd;
     total += subtotal;
-    
-  li.innerHTML = `
-    ${item.nome} - R$ ${item.preco.toFixed(2)} x ${item.qtd} = R$ ${(item.preco * item.qtd).toFixed(2)}
-    <button class="btn-menos" onclick="alterarQuantidade(${index}, -1)">−</button>
-    <button class="btn-mais" onclick="alterarQuantidade(${index}, 1)">+</button>
-    <button class="remover" onclick="removerItem(${index})">Remover</button>
-`;
+
+    const li = document.createElement('li');
+    li.innerHTML = `
+      ${item.nome} - R$ ${item.preco.toFixed(2)} x ${item.qtd} = R$ ${subtotal.toFixed(2)}
+      <button class="btn-menos" onclick="alterarQuantidade(${index}, -1)">−</button>
+      <button class="btn-mais" onclick="alterarQuantidade(${index}, 1)">+</button>
+      <button class="remover" onclick="removerItem(${index})">Remover</button>
+    `;
     lista.appendChild(li);
   });
 
@@ -94,8 +110,10 @@ function atualizarCarrinho() {
 
 function toggleCarrinho() {
   const box = document.getElementById('carrinho-detalhes');
-  if (box) box.classList.toggle('oculto');
+  if (box) {
+    box.classList.toggle('oculto');
+  }
 }
 
-// Inicializa ao carregar
+// Inicializa o carrinho ao carregar a página
 atualizarCarrinho();

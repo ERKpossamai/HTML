@@ -250,13 +250,16 @@ main {
   color: #00aa55  ;
 }
 
-/* Carrinho */
+/* =====================================
+   🛒 CARRINHO DE COMPRAS
+   Estilos para o carrinho de compras e seus detalhes
+===================================== */
 .carrinho {
   position: relative;
   font-size: 1.5rem;
   cursor: pointer;
   text-decoration: none;
-  color: inherit; 
+  color: inherit;
 }
 
 .carrinho a {
@@ -266,7 +269,7 @@ main {
 
 .contador {
   background-color: red;
-  color: rgb(0, 0, 0);
+  color: white;
   font-size: 0.8rem;
   padding: 2px 6px;
   border-radius: 50%;
@@ -289,20 +292,35 @@ main {
 }
 
 #carrinho-detalhes {
-  background-color: #ccc;
+  background-color: #fff;
   padding: 20px;
   margin-top: 30px;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   width: 400px;
   margin-left: auto;
   margin-right: auto;
   text-align: left;
 }
 
+.remover {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 4px 8px;
+  margin-left: 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.remover:hover {
+  background-color: #c82333;
+}
+
 .finalizar {
-  background-color: #e54004;
-  color: #ccc;
+  background-color: #ffc107;
+  color: #333;
   padding: 10px 18px;
   margin-top: 20px;
   border: none;

@@ -15,7 +15,7 @@
    🖼️ BODY - Fundo e Centralização
 ===================================== */
 body {
-  display: flex;
+display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
@@ -62,26 +62,6 @@ header h1::before {
 header h1:hover::before {
   width: 100%;
   filter: drop-shadow(0 0 25px #e54004);
-}
-
-section {
-  text-align: center;
-  padding: 2rem;
-  max-width: 800px;
-  margin-top: 50px;
-  margin: 50px 500px 50px;
-  padding: 20px;
-  background: rgba(255, 255, 255, 0.1);
-  color: #fff;
-  border: 2px solid rgba(255, 255, 255, .5);
-  border-radius: 20px;
-  backdrop-filter: blur(20px);
-  box-shadow: 0 0 30px rgba(0, 0, 0, .5);
-}
-
-section h2 {
-  text-align: center;
-  color: #e54004;
 }
 
 .logo-img {
@@ -133,22 +113,25 @@ section h2 {
   color: #e54004;
 }
 
-<<<<<<< HEAD
-footer {
+/* =====================================
+   🧾 SECTION - Área de Conteúdo
+===================================== */
+section {
   text-align: center;
-  margin-top: 50px ;
-  padding: 2rem;
-  background-color: #222;
-  color: white;
-  position: relative;
-=======
-.section1 {
   max-width: 800px;
-  margin: 40px auto;
+  margin: 50px auto;
   padding: 20px;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+}
+
+section h2 {
+  color: #e54004;
+  margin-bottom: 1rem;
 }
 
 /* =====================================
@@ -206,10 +189,89 @@ footer {
   background-color: #222;
   color: #fff;
   position: fixed;
->>>>>>> 6835ffa1f7e69c3dbd18701e1c38a86c2637b923
   left: 0;
   bottom: 0;
   width: 100%;
+}
+
+/* Carrinho */
+.carrinho {
+  position: relative;
+  font-size: 1.5rem;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit; 
+}
+
+.carrinho a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.contador-carrinho {
+  background-color: red;
+  color: white;
+  font-size: 0.8rem;
+  padding: 2px 6px;
+  border-radius: 50%;
+  position: absolute;
+  top: -8px;
+  right: -12px;
+  text-decoration: none;
+}
+
+#contador {
+  background-color: red;
+  color: white;
+  font-size: 0.8rem;
+  padding: 2px 6px;
+  border-radius: 50%;
+  position: absolute;
+  top: -8px;
+  right: -12px;
+  text-decoration: none;
+}
+
+#carrinho-detalhes {
+  background-color: #fff;
+  padding: 20px;
+  margin-top: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
+
+.remover {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 4px 8px;
+  margin-left: 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.remover:hover {
+  background-color: #c82333;
+}
+
+.finalizar {
+  background-color: #ffc107;
+  color: #333;
+  padding: 10px 18px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.finalizar:hover {
+  background-color: #e0a800;
 }
 
 /* =====================================

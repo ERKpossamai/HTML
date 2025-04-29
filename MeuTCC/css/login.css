@@ -276,7 +276,7 @@ header h1:hover::before {
 
 .contador {
   background-color: red;
-  color: white;
+  color: rgb(0, 0, 0);
   font-size: 0.8rem;
   padding: 2px 6px;
   border-radius: 50%;
@@ -299,7 +299,7 @@ header h1:hover::before {
 }
 
 #carrinho-detalhes {
-  background-color: #fff;
+  background-color: #ccc;
   padding: 20px;
   margin-top: 30px;
   border-radius: 10px;
@@ -310,24 +310,9 @@ header h1:hover::before {
   text-align: left;
 }
 
-.remover {
-  background-color: #dc3545;
-  color: white;
-  border: none;
-  padding: 4px 8px;
-  margin-left: 10px;
-  border-radius: 5px;
-  font-size: 12px;
-  cursor: pointer;
-}
-
-.remover:hover {
-  background-color: #c82333;
-}
-
 .finalizar {
-  background-color: #ffc107;
-  color: #333;
+  background-color: #e54004;
+  color: #ccc;
   padding: 10px 18px;
   margin-top: 20px;
   border: none;
@@ -339,7 +324,6 @@ header h1:hover::before {
 .finalizar:hover {
   background-color: #e0a800;
 }
-
 /* 📱 Responsividade para tablets */
 @media (max-width: 768px) {
   header {
