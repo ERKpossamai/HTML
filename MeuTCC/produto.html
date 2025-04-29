@@ -15,8 +15,7 @@
     <nav class="navegation">
       <a href="inicio.html">Início</a>
       <a href="planos.html">Planos</a>
-      <button class="btnLogin-popup">Produtos</button>
-      <a href="contato.html">Contatos</a>
+      <button class="btnLogin-popup">Produtos</button>  
       <a href="local.html">Localização</a>
       <a href="login.html">Login</a>
     </nav>
@@ -31,8 +30,8 @@
     <div class="produtos_car">
       <img src="img/produto1.png" alt="Pré-treino em oferta" />
       <h2>Pré-treino em oferta</h2>
-      <p class="preco">R$149,99</p>
-      <button onclick="adicionarAoCarrinho('Pré-treino em oferta', 149.99)">Adicionar ao carrinho</button>
+      <p class="preco">R$149,90</p>
+      <button onclick="adicionarAoCarrinho('Pré-treino em oferta', 149.90)">Adicionar ao Carrinho</button>
     </div>
 
     <div class="produtos_car">
@@ -50,18 +49,19 @@
     </div>
   </main>
 
-   <!-- Carrinho Detalhado -->
+   <div class="ocultei">
+    <!-- Carrinho Detalhado -->
    <div id="carrinho-detalhes" class="oculto">
     <ul id="lista-carrinho"></ul>
     <p><strong>Total:</strong> R$ <span id="total">0.00</span></p>
     <button onclick="finalizarCompra()" class="finalizar">Finalizar Compra</button>
   </div>
+   </div>
 
   <footer>
     &copy; 2025 Estação do corpo. Todos os direitos reservados a (L J)
   </footer>
 
   <script src="script.js"></script>
-
 </body>
 </html>

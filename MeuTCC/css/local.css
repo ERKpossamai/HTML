@@ -268,10 +268,11 @@ section {
 
 footer {
   text-align: center;
+  margin-top: 50px ;
   padding: 2rem;
   background-color: #222;
   color: white;
-  position: fixed;
+  position: relative;
   left: 0;
   bottom: 0;
   width: 100%;
