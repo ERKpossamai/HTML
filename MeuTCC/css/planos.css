@@ -234,94 +234,19 @@ header h1:hover::before {
   background-color: #e0a800;
 }
 
-/* 💳 Estilo do container dos planos de inscrição */
-.corpo_planos {
-  margin-top: 100px;
-  position: relative;
-  width: 400px;
-  height: 440px;
-  background: rgba(255, 255, 255, 0.1);
-  border: 2px solid rgba(255, 255, 255, .5);
-  border-radius: 20px;
-  backdrop-filter: blur(20px);
-  box-shadow: 0 0 30px rgba(0, 0, 0, .5);
-  display: flex;
-  flex-direction: column; /* Importante: deixa os elementos em coluna */
-  justify-content: center;
-  align-items: center;
-  transition: 0.5s ease-in-out;
-  overflow: hidden;
-}
-
-.titulo_pl {
-  font-size: 2.2rem;
-  color: #e54004;
-  text-align: center;
-  font-weight: 700;
-  letter-spacing: 1px;
-  margin-bottom: 20px;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-  text-transform: uppercase;
-}
-
-.inf_pl {
-  margin-top: 20px;
-  padding: 20px;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 12px;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-}
-
-.inf_pl h3 {
-  color: #e54004;
-  text-align: center;
-  margin-bottom: 5px;
-  font-size: 1.4rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.inf_pl ul {
-  list-style: none;
-  padding: 0;
-}
-
-.inf_pl li {
-  color: #fff;
-  font-size: 1rem;
-  margin-bottom: 10px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.parent {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 1fr;
-  grid-column-gap: 11px;
-  grid-row-gap: 0px;
-}
-
-.preco {
-  font-weight: bold;
-  margin-bottom: 0.8rem;
-  color: #00aa55;
-}
-
 footer {
   text-align: center;
   margin-top: 50px ;
   padding: 2rem;
   background-color: #222;
   color: white;
-  position: relative;
   left: 0;
   bottom: 0;
   width: 100%;
   padding: 10px;
   text-align: center;
+  position: fixed;
+  bottom: 0;
 }
 
 @media (max-width: 600px) {

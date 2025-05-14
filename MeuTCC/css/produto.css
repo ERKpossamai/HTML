@@ -1,6 +1,4 @@
-/* ==========================
-   🔁 RESET E BASE GLOBAL
-========================== */
+/* 🔁 RESET E BASE GLOBAL */
 * {
   margin: 0;
   padding: 0;
@@ -16,10 +14,7 @@ body {
   background: url('img/fundo.png') no-repeat center center/cover;
 }
 
-
-/* ==========================
- 🔝 CABEÇALHO E NAVEGAÇÃO
-========================== */
+/* 🔝 CABEÇALHO E NAVEGAÇÃO */
 header {
   position: fixed;
   top: 0;
@@ -30,6 +25,7 @@ header {
   justify-content: space-between;
   align-items: center;
   z-index: 99;
+  backdrop-filter: blur(20px);
 }
 
 header h1 {
@@ -250,10 +246,7 @@ main {
   color: #00aa55  ;
 }
 
-/* =====================================
-   🛒 CARRINHO DE COMPRAS
-   Estilos para o carrinho de compras e seus detalhes
-===================================== */
+/* 🛒 CARRINHO DE COMPRAS */
 .carrinho {
   position: relative;
   font-size: 1.5rem;
@@ -333,7 +326,7 @@ main {
   background-color: #e0a800;
 }
 
-/*botoes do carrinho*/
+/* BOTÕES DO CARRINHO */
 .btn-menos,
 .btn-mais {
   background-color: #222;
@@ -368,6 +361,21 @@ main {
   background-color: #c82333;
 }
 
+ /* RODA PÉ */
+ footer {
+  text-align: center;
+  margin-top: 50px ;
+  padding: 2rem;
+  background-color: #222;
+  color: white;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+}
+
 /* 📱 Responsividade para tablets */
 @media (max-width: 768px) {
   header {
@@ -400,20 +408,6 @@ main {
       right: 10px;
       width: 90%;
   }
-}
-
-footer {
-  text-align: center;
-  margin-top: 50px ;
-  padding: 2rem;
-  background-color: #222;
-  color: white;
-  position: relative;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  padding: 10px;
-  text-align: center;
 }
 
 @media (max-width: 600px) {
