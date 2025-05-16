@@ -18,7 +18,7 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: url('img/fundo.png') no-repeat center center / cover;
+  background: url('img/fundo.png') repeat-y center;
 }
 
 /* =====================================
@@ -180,9 +180,21 @@ section h2 {
   color: #e54004;
 }
 
-/* =====================================
-   div do cariani 
-=====================================*/
+/*==============================
+    ASIDE /  DIV DO CARIANI 
+==============================*/
+
+/* aside {
+  float: right;
+  display: inline-block;
+  display: grid
+} */
+
+.ft_dentro {
+  height: auto;
+  width: 5px;
+}
+
 .ref-cariani {
   display: flex;           
   flex-direction: row;     

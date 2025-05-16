@@ -26,7 +26,38 @@
               </a>
         </div>
     </header>
-    
+    <main>
+
+        <div class="produtos_car">
+            <img class="img-pl1" src="img/goku.png" alt="Plano Mensal" />
+            <h2>Plano Mensal</h2>
+            <p class="preco">R$119,90</p>
+            <button onclick="adicionarAoCarrinho('Plano Mensal', 119.90)">Adicionar ao Carrinho</button>
+        </div>
+
+        <div class="produtos_car">
+            <img class="img-pl2" src="img/all migth.webp" alt="Plano Semestral" />
+            <h2>Plano Semestral</h2>
+            <p class="preco">R$595,90</p>
+            <button onclick="adicionarAoCarrinho('Plano Semestral', 595.90)">Adicionar ao Carrinho</button>
+        </div>
+
+        <div class="produtos_car">
+            <img class="img-pl3" src="img/hulk1.webp" alt="Plano Anual" />
+            <h2>Plano Anual</h2>
+            <p class="preco">R$895,90</p>
+            <button onclick="adicionarAoCarrinho('Plano Anual', 895.90)">Adicionar ao Carrinho</button>
+        </div>
+    </main>
+
+    <div class="oculto">
+   <div id="carrinho-detalhes" class="oculto">
+    <ul id="lista-carrinho"></ul>
+    <p><strong>Total:</strong> R$ <span id="total">0.00</span></p>
+    <button onclick="finalizarCompra()" class="finalizar">Finalizar Compra</button>
+  </div>
+    </div>
+
     <footer>
         &copy; 2025 Estação do corpo. Todos os direitos reservados a (L J)
       </footer>

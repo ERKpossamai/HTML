@@ -9,10 +9,11 @@
 }
 
 body {
+  padding-top: 80px;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: url('img/fundo.png') no-repeat center center/cover;
+  background: url('img/fundo.png') repeat-y center;
 }
 
 
@@ -109,64 +110,74 @@ header h1:hover::before {
 /* ==========================
    💳 PLANOS DE INSCRIÇÃO
 ========================== */
-.corpo_planos {
-  position: relative;
-  width: 400px;
-  height: 440px;
+main {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  padding: 2rem;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+}
+
+.img-pl1 {
+  height: 300px;
+  width: 765px;
+  filter: drop-shadow(10px 0 30px blue);
+}
+.img-pl2 {
+  height: 300px;
+  width: 765px;
+  filter: drop-shadow(10px 0 30px yellow);
+}
+.img-pl3 {
+  height: 300px;
+  width: 765px;
+  filter: drop-shadow(10px 0 30px green);
+}
+
+.produtos_car {
   background: rgba(255, 255, 255, 0.1);
   border: 2px solid rgba(255, 255, 255, .5);
   border-radius: 20px;
   backdrop-filter: blur(20px);
   box-shadow: 0 0 30px rgba(0, 0, 0, .5);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  transition: 0.5s ease-in-out;
-  overflow: hidden;
-}
-
-.titulo_pl {
-  font-size: 2.2rem;
-  color: #e54004;
-  text-align: center;
-  font-weight: 700;
-  letter-spacing: 1px;
-  margin-bottom: 20px;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-  text-transform: uppercase;
-}
-
-.inf_pl {
-  margin-top: 20px;
-  padding: 20px;
-  background: rgba(255, 255, 255, 0.05);
+  color: #ccc;
   border-radius: 12px;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-}
-
-.inf_pl h3 {
-  color: #e54004;
+  padding: 1rem;
+  width: 250px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   text-align: center;
-  margin-bottom: 5px;
-  font-size: 1.4rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  transition: transform 0.2s;
 }
 
-.inf_pl ul {
-  list-style: none;
-  padding: 0;
+.produtos_car button {
+  background-color: #00aa55;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
-.inf_pl li {
-  color: #fff;
-  font-size: 1rem;
-  margin-bottom: 10px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
+.produtos_car button:hover {
+  background-color: #008d47;
+}
+
+.produtos_car img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.produtos_car h2 {
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+}
+
+.preco {
+  font-weight: bold;
+  margin-bottom: 0.8rem;
+  color: #00aa55  ;
 }
 
 /* Carrinho */
@@ -232,6 +243,42 @@ header h1:hover::before {
 
 .finalizar:hover {
   background-color: #e0a800;
+}
+
+/* BOTÕES DO CARRINHO */
+.btn-menos,
+.btn-mais {
+  background-color: #222;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  margin-left: 5px;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-menos:hover,
+.btn-mais:hover {
+  background-color: #c73102;
+}
+
+.remover {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  margin-left: 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* ocultar a div do script */
+.oculto {
+  display: none;
 }
 
 footer {
