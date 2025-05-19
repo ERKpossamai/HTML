@@ -1,0 +1,7 @@
+print("Personagem 1: Olá! Tudo bem com você?")
+print("Personagem 2: Olá! Tudo ótimo, e com você?")
+print("Personagem 1: Tudo tranquilo por aqui. O que está fazendo?")
+print("Personagem 2: Estava pensando em tomar um café. Quer se juntar a mim?")
+print("Personagem 1: Adoraria! Onde vamos?")
+print("Personagem 2: Tem uma cafeteria nova ali na esquina. Que tal?")
+print("Personagem 1: Perfeito! Vamos lá então.")
