@@ -330,3 +330,28 @@ font-weight: bold;
   padding: 10px;
   text-align: center;
 }
+
+/* Para telas maiores que 600px (tablets e alguns smartphones em paisagem) */
+@media (min-width: 600px) {
+  body {
+    font-size: 18px;
+    line-height: 1.6;
+  }
+}
+
+/* Para telas maiores que 992px (desktops) */
+@media (min-width: 992px) {
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    /* Centralizar o conteúdo */
+  }
+}
+
+/* ↑ Nsei sestá certo... ↑ */
+/* TABLETS */
+@media screen and (max-width: 768) {
+  header {
+    padding: 20px 50px;
+  }
+}
