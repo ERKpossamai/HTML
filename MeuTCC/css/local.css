@@ -32,7 +32,8 @@ header {
   justify-content: space-between;
   align-items: center;
   z-index: 99;
-  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
 }
 
 header h1 {
@@ -306,6 +307,10 @@ footer {
   text-align: center;
 }
 
+/* ocultar a div do script */
+.oculto {
+  display: none;
+}
 
 /* =====================================
    📱 RESPONSIVIDADE

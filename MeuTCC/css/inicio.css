@@ -34,7 +34,8 @@ header {
   justify-content: space-between;
   align-items: center;
   z-index: 99;
-  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
 }
 
 /* Logo de texto com efeito hover */
@@ -125,7 +126,8 @@ section {
   color: #fff;
   border: 2px solid rgba(255, 255, 255, 0.5);
   border-radius: 20px;
-  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
 }
 
@@ -212,14 +214,15 @@ section h2 {
   padding: 10px 15px;
   font-weight: bold;
   border-radius: 8px;
-  backdrop-filter: blur(20px);
   background: rgba(255, 255, 255, 0.1);
   border: 2px solid rgba(255, 255, 255, 0.5);
   max-height: 200px;
   max-width: 600px;
   padding: 20px 25px;   
   min-height: 150px;  
-  font-size: 1.4rem;  
+  font-size: 1.4rem; 
+  -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
 } 
 
 /* Estilo da imagem */
@@ -321,6 +324,12 @@ footer {
 
 .finalizar:hover {
   background-color: #e0a800;
+}
+
+
+/* ocultar a div do script */
+.oculto {
+  display: none;
 }
 
 /* =====================================

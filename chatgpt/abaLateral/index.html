@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Produtos por Categoria</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <button id="openSidebar">🛍 Ver Produtos</button>
+
+  <aside id="sidebar">
+    <button id="closeSidebar">✖</button>
+    <h2>Categorias</h2>
+    <ul class="category-list">
+      <li onclick="filterProducts('todos')">Todos</li>
+      <li onclick="filterProducts('roupas')">Roupas</li>
+      <li onclick="filterProducts('acessorios')">Acessórios</li>
+      <li onclick="filterProducts('suplementos')">Suplementos</li>
+    </ul>
+
+    <div id="product-list"></div>
+  </aside>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

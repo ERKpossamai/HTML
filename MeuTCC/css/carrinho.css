@@ -34,7 +34,8 @@ header {
   justify-content: space-between;
   align-items: center;
   z-index: 99;
-  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
 }
 
 header h3 {

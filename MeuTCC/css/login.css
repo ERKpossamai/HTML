@@ -30,7 +30,8 @@ header {
   justify-content: space-between;
   align-items: center;
   z-index: 99;
-  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
 }
 
 header h1 {
@@ -118,7 +119,8 @@ header h1:hover::before {
   background: rgba(255, 255, 255, 0.1);
   border: 2px solid rgba(255, 255, 255, .5);
   border-radius: 20px;
-  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
   box-shadow: 0 0 30px rgba(0, 0, 0, .5);
   display: flex;
   justify-content: center;
@@ -325,6 +327,12 @@ header h1:hover::before {
 .finalizar:hover {
   background-color: #e0a800;
 }
+
+/* ocultar a div do script */
+.oculto {
+  display: none;
+}
+
 /* 📱 Responsividade para tablets */
 @media (max-width: 768px) {
   header {
