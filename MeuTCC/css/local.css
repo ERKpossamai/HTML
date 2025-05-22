@@ -317,33 +317,27 @@ footer {
    Ajustes para diferentes tamanhos de tela
 ===================================== */
 
-/* Tablets e telas pequenas */
-@media (max-width: 600px) {
-  section {
-    padding: 2rem 1rem;
+═════════════════════════════════════════════════════╗ ║ 📱 RESPONSIVIDADE – MEDIA QUERIES E BREAKPOINTS ║ ╚═════════════════════════════════════════════════════╝
+
+/* Estilos base (mobile first) */
+body {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Tablets (≥600px) */
+@media (min-width: 600px) {
+  body {
+    font-size: 18px;
+    line-height: 1.6;
   }
 }
 
-/* 📱 Celulares */
-@media (max-width: 480px) {
-  header {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .navegation {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .btnLogin-popup {
-    margin-top: 10px;
-  }
-
-  .wrapper {
-    width: 95%;
-    height: auto;
-    padding: 15px;
+/* Desktops (≥992px) */
+@media (min-width: 992px) {
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    /* Centraliza o conteúdo */
   }
 }

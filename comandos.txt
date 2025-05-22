@@ -59,11 +59,6 @@ body {
   }
 }
 
-/* Exemplo corrigido */
-@media screen and (max-width: 768px) {
-  /* Estilos para tablets */
-}
-
 ╔═════════════════════════════════════════════╗
 ║ 📐 CSS – UNIDADES DE MEDIDA                ║
 ╚═════════════════════════════════════════════╝

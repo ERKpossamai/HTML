@@ -331,7 +331,15 @@ font-weight: bold;
   text-align: center;
 }
 
-/* Para telas maiores que 600px (tablets e alguns smartphones em paisagem) */
+═════════════════════════════════════════════════════╗ ║ 📱 RESPONSIVIDADE – MEDIA QUERIES E BREAKPOINTS ║ ╚═════════════════════════════════════════════════════╝
+
+/* Estilos base (mobile first) */
+body {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Tablets (≥600px) */
 @media (min-width: 600px) {
   body {
     font-size: 18px;
@@ -339,19 +347,11 @@ font-weight: bold;
   }
 }
 
-/* Para telas maiores que 992px (desktops) */
+/* Desktops (≥992px) */
 @media (min-width: 992px) {
   .container {
     max-width: 1200px;
     margin: 0 auto;
-    /* Centralizar o conteúdo */
-  }
-}
-
-/* ↑ Nsei sestá certo... ↑ */
-/* TABLETS */
-@media screen and (max-width: 768) {
-  header {
-    padding: 20px 50px;
+    /* Centraliza o conteúdo */
   }
 }
