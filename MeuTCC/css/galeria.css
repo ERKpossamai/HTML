@@ -51,4 +51,32 @@ h1 {
   transform: scale(1.05);
 }
 
+.hero {
+    padding: 100px 20px;
+    background-size: 10px;
+    background-size: auto;
+}
+
+/* Botão interativo */
+button {
+    background: #ff6600;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 5px;
+}
+
+/*footer da galeria */
+/* Rodapé */
+footer {
+    background: #222;
+    color: white;
+    padding: 2px;
+    width: 100%;
+    bottom: 0;
+}
+
 
