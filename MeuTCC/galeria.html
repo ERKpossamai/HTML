@@ -5,9 +5,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Galeria de Imagens</title>
   <link rel="stylesheet" href="css/galeria.css">
-  <script defer src="galeria.js"></script>
+  <script defer src="js/galeria.js"></script>
 </head>
 <body>
+  <header>
+    <img class="logo-img" src="img/logo.png" alt="Logo Estação do Corpo" />
+    <h1>Estação do corpo</h1>
+  
+    <!-- Botão de menu hambúrguer -->
+    <div class="menu-toggle" aria-label="Abrir menu">&#9776;</div>
+  
+    <nav class="navegation" aria-label="Menu principal">
+      <ul>
+        <li><button class="btnLogin-popup">Início</button></li>
+        <li><a href="planos.html">Planos</a></li>
+        <li><a href="produto.html">Produtos</a></li>
+        <li><a href="local.html">Localização</a></li>
+        <li><a href="login.html">Login</a></li>
+        li
+      </ul>
+  
+      <div
+        class="carrinho"
+        onclick="toggleCarrinho()"
+        aria-label="Carrinho de compras"
+      >
+        <a href="carrinho.html">
+          🛒<span id="contador" class="contador-carrinho">0</span>
+        </a>
+      </div>
+    </nav>
+  </header>
+  
   <reader><h1>Galeria de Imagens</h1></reader>
   <div class="galeria">
     <img src="img/ft1.png.jpg" alt="Personal 1">
@@ -29,11 +58,12 @@
   </div>
 
 
-<footer><section class="hero">
-        <h2>Bem-vindos</h2>
-        <p>Explore nossos serviços e descubra mais!!!</p>
-        <button id="saibaMaisBtn"><a href="produto.html"></a>Saiba mais</button>
-    </section></footer>
+  <footer>
+    <div class="container">
+      © 2025 Estação do corpo
+    </div>
+  </footer>
+  
     
 </body>
 </html>

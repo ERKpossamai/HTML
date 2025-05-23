@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Estação do Corpo</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    /* RESET */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      font-size: 16px;
+      line-height: 1.5;
+      min-height: 100vh;
+      background: url('img/fundo.png') repeat-y center;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 20px 100px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 99;
+      backdrop-filter: blur(20px);
+    }
+
+    header h1 {
+      font-size: 2rem;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      color: transparent;
+      -webkit-text-stroke: 1px #c73102;
+      position: relative;
+    }
+
+    header h1::before {
+      content: "Estação do corpo";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 100%;
+      overflow: hidden;
+      color: #c73102;
+      white-space: nowrap;
+      transition: width 0.3s ease-in-out;
+    }
+
+    header h1:hover::before {
+      width: 100%;
+      filter: drop-shadow(0 0 25px #e54004);
+    }
+
+    nav.navegation {
+      display: flex;
+      align-items: center;
+    }
+
+    .navegation a,
+    .btnLogin-popup {
+      position: relative;
+      font-size: 1.1rem;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      margin-left: 40px;
+    }
+
+    .navegation a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 100%;
+      height: 3px;
+      background: #fff;
+      border-radius: 5px;
+      transform: scaleX(0);
+      transition: transform .5s;
+    }
+
+    .navegation a:hover::after {
+      transform: scaleX(1);
+    }
+
+    .btnLogin-popup {
+      background: transparent;
+      border: 2px solid #fff;
+      border-radius: 6px;
+      cursor: pointer;
+      width: 130px;
+      height: 50px;
+      transition: background 0.5s, color 0.5s;
+    }
+
+    .btnLogin-popup:hover {
+      background: #fff;
+      color: #e54004;
+    }
+
+    section {
+      text-align: center;
+      max-width: 800px;
+      margin: 150px auto 50px;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+      border: 2px solid rgba(255, 255, 255, 0.5);
+      border-radius: 20px;
+      backdrop-filter: blur(20px);
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    }
+
+    section h2 {
+      color: #e54004;
+      margin-bottom: 1rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 10px;
+      background-color: #222;
+      color: #fff;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+    }
+
+    /* ÍCONE DO MENU */
+    .menu-toggle {
+      display: none;
+      font-size: 2rem;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    /* MEDIA QUERIES */
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+        position: absolute;
+        right: 30px;
+        top: 20px;
+        z-index: 101;
+      }
+
+      .navegation {
+        display: none;
+        flex-direction: column;
+        background: rgba(0, 0, 0, 0.95);
+        padding: 20px;
+        position: absolute;
+        right: 30px;
+        top: 80px;
+        border-radius: 12px;
+        box-shadow: 0 0 15px black;
+        z-index: 100;
+      }
+
+      .navegation.ativo {
+        display: flex;
+      }
+
+      .navegation a,
+      .btnLogin-popup {
+        margin: 10px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Estação do corpo</h1>
+
+    <!-- Ícone do menu -->
+    <div class="menu-toggle" id="menu-toggle">
+      <i class="fas fa-dumbbell"></i>
+    </div>
+
+    <!-- Navegação -->
+    <nav class="navegation" id="nav">
+      <a href="#">Início</a>
+      <a href="#">Planos</a>
+      <a href="#">Sobre</a>
+      <a href="#">Contato</a>
+      <button class="btnLogin-popup">Login</button>
+    </nav>
+  </header>
+
+  <section>
+    <h2>Bem-vindo à Estação do Corpo</h2>
+    <p>Seu treino começa aqui!</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Estação do Corpo. Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('menu-toggle');
+    const nav = document.getElementById('nav');
+
+    toggle.addEventListener('click', () => {
+      nav.classList.toggle('ativo');
+    });
+  </script>
+</body>
+</html>

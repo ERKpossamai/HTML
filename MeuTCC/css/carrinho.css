@@ -1,4 +1,3 @@
-
 /* =====================================
    🎨 RESET E CONFIGURAÇÕES GERAIS
    Aplicação de reset para garantir 
@@ -20,7 +19,12 @@ body {
   align-items: center;
   min-height: 100vh;
   background: url('img/fundo.png') repeat-y center;
+  font-size: 16px;
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
 }
+
 /* =====================================
    🧩 HEADER - Cabeçalho Principal
 ===================================== */
@@ -29,31 +33,24 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  padding: 20px 100px;
+  padding: 15px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 99;
   -webkit-backdrop-filter: blur(20px);
-    backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  background: rgba(0,0,0,0.3);
+  flex-wrap: wrap;
 }
 
-header h3 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 100%;
-  color: #c73102;
-}
-
-/* Logo de texto com efeito hover */
 header h1 {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: transparent;
   -webkit-text-stroke: 1px #c73102;
   position: relative;
+  margin-bottom: 8px;
 }
 
 header h1::before {
@@ -74,21 +71,33 @@ header h1:hover::before {
   filter: drop-shadow(0 0 25px #e54004);
 }
 
+header h3 {
+  color: #c73102;
+}
+
 .logo-img {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   object-fit: cover;
+  margin-right: 10px;
+}
+
+.navegation {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
 .navegation a,
 .navegation .btnLogin-popup {
   position: relative;
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: #fff;
   text-decoration: none;
   font-weight: 500;
-  margin-left: 40px;
+  margin-left: 20px;
+  white-space: nowrap;
 }
 
 .navegation a::after {
@@ -114,33 +123,16 @@ header h1:hover::before {
   border-radius: 6px;
   cursor: pointer;
   transition: .5s;
-  width: 130px;
-  height: 50px;
+  width: 120px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .btnLogin-popup:hover {
   background: #fff;
   color: #e54004;
-}
-
-/* Adicione isso para que o conteúdo fique visível abaixo da faixa */
-.produto {
-  background: #fff;
-  padding: 15px;
-  margin: 10px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px #ccc;
-  width: 250px;
-  text-align: center;
-}
-
-.produto img {
-  width: 250px;
-  border-radius: 8px;
-}
-
-.botoes {
-  margin-top: 10px;
 }
 
 button {
@@ -151,10 +143,13 @@ button {
   cursor: pointer;
 }
 
+/* =====================================
+   CARRINHO
+===================================== */
 #lista-carrinho {
-  width: 100%;
+  width: 90%;
   max-width: 600px;
-  margin-top: 10px;
+  margin: 10px auto;
 }
 
 .item {
@@ -166,16 +161,18 @@ button {
   margin-bottom: 5px;
   border-radius: 8px;
   box-shadow: 0 0 5px #ccc;
+  flex-wrap: wrap;
 }
 
 #checkout {
   max-width: 600px;
-  margin: 0 auto;
+  margin: 20px auto;
   background: #fff;
-  padding: 35px;
+  padding: 25px;
   border-radius: 10px;
   box-shadow: 0 0 10px #ccc;
 }
+
 input[type="text"] {
   width: 100%;
   padding: 10px;
@@ -183,25 +180,31 @@ input[type="text"] {
   border-radius: 5px;
   border: 1px solid #ccc;
 }
+
 #total {
   font-size: 18px;
   font-weight: bold;
 }
 
+/* =====================================
+   LOGO E TÍTULOS
+===================================== */
 .logo {
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
   object-fit: contain;
 }
 
-.titulo  {
-color: rgb(219, 14, 14);
-text-decoration: none;
-font-size: 18px;
-font-weight: bold;
+.titulo {
+  color: rgb(219, 14, 14);
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
 }
 
-/* 🛒 CARRINHO DE COMPRAS */
+/* =====================================
+   CARRINHO ÍCONES E CONTADORES
+===================================== */
 .carrinho {
   position: relative;
   font-size: 1.5rem;
@@ -215,18 +218,7 @@ font-weight: bold;
   color: inherit;
 }
 
-.contador {
-  background-color: red;
-  color: white;
-  font-size: 0.8rem;
-  padding: 2px 6px;
-  border-radius: 50%;
-  position: absolute;
-  top: -8px;
-  right: -12px;
-  text-decoration: none;
-}
-
+.contador,
 #contador {
   background-color: red;
   color: white;
@@ -239,27 +231,33 @@ font-weight: bold;
   text-decoration: none;
 }
 
+/* =====================================
+   DETALHES DO CARRINHO
+===================================== */
 #carrinho-detalhes {
   background-color: #fff;
   padding: 20px;
-  margin-top: 30px;
+  margin: 30px auto 0;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  width: 400px;
-  margin-left: auto;
-  margin-right: auto;
+  width: 90%;
+  max-width: 400px;
   text-align: left;
 }
 
+/* =====================================
+   BOTÕES
+===================================== */
 .remover {
   background-color: #dc3545;
   color: white;
   border: none;
-  padding: 4px 8px;
+  padding: 5px 10px;
   margin-left: 10px;
   border-radius: 5px;
-  font-size: 12px;
+  font-size: 14px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .remover:hover {
@@ -281,7 +279,6 @@ font-weight: bold;
   background-color: #e0a800;
 }
 
-/* BOTÕES DO CARRINHO */
 .btn-menos,
 .btn-mais {
   background-color: #222;
@@ -300,44 +297,26 @@ font-weight: bold;
   background-color: #c73102;
 }
 
-.remover {
-  background-color: #dc3545;
-  color: white;
-  border: none;
-  padding: 5px 10px;
-  margin-left: 10px;
-  border-radius: 5px;
-  font-size: 14px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.remover:hover {
-  background-color: #c82333;
-}
-
- /* RODA PÉ */
- footer {
+/* =====================================
+   RODA PÉ
+===================================== */
+footer {
   text-align: center;
-  margin-top: 50px ;
-  padding: 2rem;
+  margin-top: 50px;
+  padding: 1rem 0;
   background-color: #222;
   color: white;
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
-  padding: 10px;
-  text-align: center;
+  font-size: 14px;
 }
 
-═════════════════════════════════════════════════════╗ ║ 📱 RESPONSIVIDADE – MEDIA QUERIES E BREAKPOINTS ║ ╚═════════════════════════════════════════════════════╝
-
-/* Estilos base (mobile first) */
-body {
-  font-size: 16px;
-  line-height: 1.5;
-}
+/* =====================================================
+   📱 RESPONSIVIDADE – MEDIA QUERIES E BREAKPOINTS
+   Mobile-first (já configurado)
+===================================================== */
 
 /* Tablets (≥600px) */
 @media (min-width: 600px) {
@@ -345,13 +324,59 @@ body {
     font-size: 18px;
     line-height: 1.6;
   }
+
+  header {
+    padding: 20px 40px;
+    flex-wrap: nowrap;
+  }
+
+  header h1 {
+    font-size: 1.75rem;
+    margin-bottom: 0;
+  }
+
+  .logo-img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .produto {
+    width: 250px;
+    margin: 15px;
+  }
+
+  #lista-carrinho, #carrinho-detalhes, #checkout {
+    width: 80%;
+    max-width: 600px;
+  }
 }
 
 /* Desktops (≥992px) */
 @media (min-width: 992px) {
+  body {
+    font-size: 20px;
+    line-height: 1.7;
+  }
+
+  header {
+    padding: 20px 100px;
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+
+  .produto {
+    width: 300px;
+    margin: 20px;
+  }
+
+  #lista-carrinho, #carrinho-detalhes, #checkout {
+    width: 600px;
+  }
+
   .container {
     max-width: 1200px;
     margin: 0 auto;
-    /* Centraliza o conteúdo */
   }
 }

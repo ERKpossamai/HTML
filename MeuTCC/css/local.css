@@ -1,4 +1,4 @@
-/* =====================================
+/* ===================================== 
    🔁 RESET E BASE GLOBAL
    Aplicação de reset para garantir consistência entre navegadores
 ===================================== */
@@ -10,30 +10,34 @@
 }
 
 body {
+  font-size: 16px;
+  line-height: 1.5;
   padding-top: 60px;
+  padding-bottom: 60px;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
   background: url('img/fundo.png') repeat-y center;
 }
 
-
 /* =====================================
    🔝 CABEÇALHO E NAVEGAÇÃO
-   Estilos para o cabeçalho e links de navegação
 ===================================== */
 header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  padding: 20px 100px;
+  padding: 20px 5%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
   z-index: 99;
   -webkit-backdrop-filter: blur(20px);
-    backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
 }
 
 header ul {
@@ -41,6 +45,7 @@ header ul {
   display: flex;
   align-items: center;
   margin-left: 20px;
+  flex-wrap: wrap;
 }
 
 header h1 {
@@ -118,24 +123,20 @@ header h1:hover::before {
   color: #e54004;
 }
 
-
 /* =====================================
    📍 LOCAL DO MINI MAPA
-   Estilos para o mini mapa integrado na página
 ===================================== */
 iframe {
-  width: 90%;
-  height: 450px;
+  width: 100%;
+  height: 300px;
   border: 0;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   margin-top: 1rem;
 }
 
-
 /* =====================================
    🧩 BOTÕES DE AÇÃO
-   Estilos para os botões de ação na página
 ===================================== */
 .buttons {
   margin-top: 2rem;
@@ -173,18 +174,10 @@ iframe {
 
 .buttons .whatsapp:hover {
   background-color: #1ebe57;
-  text-decoration: none;
-  padding: 0.8rem 1.5rem;
-  border: none;
-  border-radius: 8px;
-  font-size: 16px;
-  color: #222;
 }
-
 
 /* =====================================
    🧩 SEÇÕES E BOTÕES DE PRODUTOS
-   Estilos para as seções e botões relacionados aos produtos
 ===================================== */
 section {
   text-align: center;
@@ -195,6 +188,7 @@ section {
 section h2 {
   text-align: center;
   color: #e54004;
+  font-size: 1.5rem;
 }
 
 #produto button {
@@ -211,10 +205,8 @@ button:hover {
   background-color: #007f3e;
 }
 
-
 /* =====================================
    🛒 CARRINHO DE COMPRAS
-   Estilos para o carrinho de compras e seus detalhes
 ===================================== */
 .carrinho {
   position: relative;
@@ -229,7 +221,7 @@ button:hover {
   color: inherit;
 }
 
-.contador {
+.contador, #contador {
   background-color: red;
   color: white;
   font-size: 0.8rem;
@@ -238,19 +230,6 @@ button:hover {
   position: absolute;
   top: -8px;
   right: -12px;
-  text-decoration: none;
-}
-
-#contador {
-  background-color: red;
-  color: white;
-  font-size: 0.8rem;
-  padding: 2px 6px;
-  border-radius: 50%;
-  position: absolute;
-  top: -8px;
-  right: -12px;
-  text-decoration: none;
 }
 
 #carrinho-detalhes {
@@ -259,7 +238,8 @@ button:hover {
   margin-top: 30px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  width: 400px;
+  width: 90%;
+  max-width: 400px;
   margin-left: auto;
   margin-right: auto;
   text-align: left;
@@ -295,48 +275,43 @@ button:hover {
   background-color: #e0a800;
 }
 
-
 /* =====================================
    🦶 RODAPÉ
-   Estilos para o rodapé da página
 ===================================== */
 footer {
   text-align: center;
-  margin-top: 50px ;
-  padding: 2rem;
+  margin-top: 50px;
+  padding: 1rem;
   background-color: #222;
   color: white;
-  position: fixed;
+  position: relative;
   bottom: 0;
   left: 0;
   width: 100%;
-  padding: 10px;
-  text-align: center;
 }
 
-/* ocultar a div do script */
+/* Ocultar elementos via script */
 .oculto {
   display: none;
 }
 
 /* =====================================
-   📱 RESPONSIVIDADE
-   Ajustes para diferentes tamanhos de tela
+   📱 RESPONSIVIDADE – MEDIA QUERIES
 ===================================== */
-
-═════════════════════════════════════════════════════╗ ║ 📱 RESPONSIVIDADE – MEDIA QUERIES E BREAKPOINTS ║ ╚═════════════════════════════════════════════════════╝
-
-/* Estilos base (mobile first) */
-body {
-  font-size: 16px;
-  line-height: 1.5;
-}
 
 /* Tablets (≥600px) */
 @media (min-width: 600px) {
   body {
     font-size: 18px;
     line-height: 1.6;
+  }
+
+  iframe {
+    height: 400px;
+  }
+
+  section h2 {
+    font-size: 1.8rem;
   }
 }
 
@@ -345,6 +320,42 @@ body {
   .container {
     max-width: 1200px;
     margin: 0 auto;
-    /* Centraliza o conteúdo */
+  }
+
+  iframe {
+    height: 450px;
+  }
+
+  section h2 {
+    font-size: 2rem;
+  }
+}
+
+/* Telas pequenas (≤768px) */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 5%;
+  }
+
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  .navegation a,
+  .navegation .btnLogin-popup {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+
+  header ul {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 10px;
+  }
+
+  footer {
+    font-size: 0.9rem;
   }
 }
