@@ -86,7 +86,7 @@ header h1:hover::before {
   color: #fff;
   text-decoration: none;
   font-weight: 500;
-  margin-left: 40px;
+  margin-left: 30px;
 }
 
 .navegation a::after {
