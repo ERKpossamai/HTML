@@ -117,3 +117,13 @@ function toggleCarrinho() {
 
 // Inicializa o carrinho ao carregar a página
 atualizarCarrinho();
+
+
+// Script do menu hambúrguer
+const menuToggle = document.getElementById('menu-toggle');
+const navegation = document.getElementById('navegation');
+
+menuToggle.addEventListener('click', () => {
+menuToggle.classList.toggle('active');
+navegation.classList.toggle('active');
+    });
