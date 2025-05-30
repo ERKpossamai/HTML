@@ -25,6 +25,19 @@ body {
   text-align: center;
 }
 
+header h1 {
+  color: #e9e2e2;
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+header a {
+  color: #c73102;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
 h1 {
   color: #e9e2e2;
   margin-bottom: 20px;
@@ -68,16 +81,24 @@ button {
     transition: 0.3s;
     border-radius: 5px;
 }
-
-/*footer da galeria */
-/* Rodapé */
-footer {
-    background: #222;
-    color: white;
-    padding: 2px;
-    width: 100%;
-    bottom: 0;
+button:hover {
+    background: #e65c00;
+    transform: scale(1.05);
 }
+ /* RODA PÉ */
+ footer {
+   text-align: center;
+   margin-top: 50px;
+   padding: 2rem;
+   background-color: #222;
+   color: white;
+   position: fixed;
+   bottom: 0;
+   left: 0;
+   width: 100%;
+   padding: 10px;
+   text-align: center;
+ }
 
 .reader {
  background: #222;

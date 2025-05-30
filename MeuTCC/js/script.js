@@ -119,11 +119,20 @@ function toggleCarrinho() {
 atualizarCarrinho();
 
 
-// Script do menu hambúrguer
-const menuToggle = document.getElementById('menu-toggle');
-const navegation = document.getElementById('navegation');
+// Espera o carregamento do DOM
+document.addEventListener('DOMContentLoaded', () => {
+  const menuToggle = document.querySelector('.menu-toggle');
+  const navegation = document.querySelector('.navegation');
 
-menuToggle.addEventListener('click', () => {
-menuToggle.classList.toggle('active');
-navegation.classList.toggle('active');
+  // Adiciona/remover classe "active" para mostrar/ocultar o menu
+  menuToggle.addEventListener('click', () => {
+    navegation.classList.toggle('active');
+  });
+
+  // Fecha o menu ao clicar em qualquer link (opcional)
+  document.querySelectorAll('.navegation a').forEach(link => {
+    link.addEventListener('click', () => {
+      navegation.classList.remove('active');
     });
+  });
+});

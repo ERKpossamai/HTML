@@ -440,7 +440,9 @@ footer {
   display: none;
 }
 
-═════════════════════════════════════════════════════╗ ║ 📱 RESPONSIVIDADE – MEDIA QUERIES E BREAKPOINTS ║ ╚═════════════════════════════════════════════════════╝
+/* ==========================
+  📱 RESPONSIVIDADE
+========================== */
 
 /* Estilos base (mobile first) */
 body {
@@ -448,11 +450,63 @@ body {
   line-height: 1.5;
 }
 
-/* Tablets (≥600px) */
-@media (min-width: 600px) {
-  body {
-    font-size: 18px;
-    line-height: 1.6;
+/* 📱 Pequenas telas: até 480px */
+@media (max-width: 480px) {
+  header {
+    padding: 15px 20px;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+}
+
+
+/* 📱 Tablets e telas médias: até 768px */
+@media (max-width: 768px) {
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 15px;
+  }
+
+  .header-left {
+    gap: 8px;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .navegation {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: rgba(0, 0, 0, 0.95);
+    width: 100%;
+    padding: 20px 0;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navegation.active {
+    display: flex;
+  }
+
+  .navegation ul {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .navegation a,
+  .navegation .btnLogin-popup {
+    margin-left: 0;
+  }
+
+  .carrinho {
+    margin-left: 10px;
   }
 }
 
@@ -462,5 +516,16 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     /* Centraliza o conteúdo */
+  }
+}
+
+/* 🖥️ Telas grandes: desktops */
+@media (min-width: 1200px) {
+  header {
+    padding: 20px 150px;
+  }
+
+  .menu-toggle {
+    display: none;
   }
 }

@@ -143,6 +143,21 @@ header h1:hover::before {
   height: 45px;
   border-radius: 50%;
   object-fit: cover;
+} 
+
+.btnLogin-popup {
+  background: transparent;
+  border: 2px solid #fff;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: .5s;
+  width: 130px;
+  height: 50px;
+}
+
+.btnLogin-popup:hover {
+  background: #fff;
+  color: #e54004;
 }
 
 /*🍔 MENU HAMBÚRGUER*/
@@ -164,20 +179,6 @@ header h1:hover::before {
   transition: all 0.3s ease;
 }
 
-.btnLogin-popup {
-  background: transparent;
-  border: 2px solid #fff;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: .5s;
-  width: 130px;
-  height: 50px;
-}
-
-.btnLogin-popup:hover {
-  background: #fff;
-  color: #e54004;
-}
 
 /* ==========================
   🧾 FORMULÁRIOS (Login / Registro)
@@ -398,6 +399,12 @@ header h1:hover::before {
 /* ==========================
   📱 RESPONSIVIDADE
 ========================== */
+
+/* Estilos base (mobile first) */
+body {
+  font-size: 16px;
+  line-height: 1.5;
+}
 
 /* 📱 Pequenas telas: até 480px */
 @media (max-width: 480px) {
