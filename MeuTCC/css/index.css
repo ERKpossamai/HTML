@@ -317,7 +317,6 @@ section h2 {
   align-self: flex-end; 
   margin-top: 10px;
   margin-left: 0;
-  
   color: white;
   padding: 10px 15px;
   font-weight: bold;
@@ -339,19 +338,6 @@ section h2 {
   height: auto;   
   display: block;
   margin-right: 0;   
-}
-/* =====================================
-   🦶 FOOTER - Rodapé
-===================================== */
-footer {
-  text-align: center;
-  padding: 10px;
-  background-color: #222;
-  color: #fff;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
 }
 
 /* Carrinho */
@@ -440,6 +426,97 @@ footer {
   display: none;
 }
 
+/* =====================================
+   🦶 FOOTER - Rodapé
+===================================== */
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #222;
+  color: #fff;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+/* =====================================
+   📱 LINKS FIXOS - Instagram e Facebook
+===================================== */
+
+.instagram-link {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+  color: white;
+  padding: 12px 20px;
+  border-radius: 50px;
+  font-weight: bold;
+  font-size: 16px;
+  text-decoration: none;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.instagram-link:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.instagram-link .icon {
+  width: 24px;
+  height: 24px;
+  filter: brightness(0) invert(1);
+}
+
+.instagram-link h4 {
+  color: white;
+  font-size: 1.rem;
+  margin: 0;
+}
+
+.facebook-link {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 1000;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  background: linear-gradient(135deg, #1877f2, #4267B2);
+  color: white;
+  padding: 12px 20px;
+  border-radius: 50px;
+  font-weight: bold;
+  font-size: 16px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.facebook-link:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.facebook-link .icon {
+  width: 24px;
+  height: 24px;
+  filter: brightness(0) invert(1);
+  /* deixa o ícone branco */
+}
+
+.facebook-link h4 {
+  color: white;
+  font-size: 1rem;
+  margin: 0;
+}
+
 /* ==========================
   📱 RESPONSIVIDADE
 ========================== */
@@ -460,6 +537,28 @@ body {
     display: flex;
   }
 
+  .instagram-link h4 {
+    display: none; 
+  }
+
+  .facebook-link h4 {
+    display: none; 
+  }
+
+  .ref-cariani img {
+    display: none;
+  }
+  .frase_cariani {
+    font-size: 1.2rem;
+    padding: 10px 15px;
+    max-width: 100%;
+    margin-top: 10px;
+  }
+
+  footer {
+    padding: 10px;
+    font-size: 10px;;
+  }
 }
 
 
@@ -528,64 +627,4 @@ body {
   .menu-toggle {
     display: none;
   }
-}
-
-.instagram-link {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 1000;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
-  color: white;
-  padding: 12px 20px;
-  border-radius: 50px;
-  font-weight: bold;
-  font-size: 16px;
-  text-decoration: none;
-  transition: transform 0.3s, box-shadow 0.3s;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-.instagram-link:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-}
-
-.instagram-link .icon {
-  width: 24px;
-  height: 24px;
-  filter: brightness(0) invert(1);
-}
-
-.facebook-link {
-  position: fixed;
-  bottom: 20px;     
-  left: 20px;       
-  z-index: 1000;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  text-decoration: none;
-  background: linear-gradient(135deg, #1877f2, #4267B2);
-  color: white;
-  padding: 12px 20px;
-  border-radius: 50px;
-  font-weight: bold;
-  font-size: 16px;
-  transition: transform 0.3s, box-shadow 0.3s;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-.facebook-link:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-}
-
-.facebook-link .icon {
-  width: 24px;
-  height: 24px;
-  filter: brightness(0) invert(1); /* deixa o ícone branco */
 }

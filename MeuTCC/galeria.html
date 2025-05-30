@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="img/logo.png" type="image/x-icon" />
   <title>Galeria de Imagens</title>
   <link rel="stylesheet" href="css/galeria.css" />
   <script defer src="js/galeria.js"></script>
@@ -58,13 +59,24 @@
     </section>
   </main>
 
-    <section class="hero">
-      <h2>Bem-vindos</h2>
-      <p>Explore nossos serviços e descubra mais!</p>
-      <a href="produto.html" class="btn">
-        <button id="saibaMaisBtn">Saiba mais</button>
-      </a>
-    </section>
+    <center>
+      <section class="hero">
+        <h2>Bem-vindos</h2>
+        <p>Explore nossos serviços e descubra mais!</p>
+        <a href="produto.html" class="btn">
+          <button id="saibaMaisBtn">Saiba mais</button>
+        </a>
+      </section>
+    </center>
+
+    <div class="oculto">
+      <!-- Carrinho Detalhado -->
+      <div id="carrinho-detalhes" class="oculto">
+        <ul id="lista-carrinho"></ul>
+        <p><strong>Total:</strong> R$ <span id="total">0.00</span></p>
+        <button onclick="finalizarCompra()" class="finalizar">Finalizar Compra</button>
+      </div>
+    </div>
 
    <footer>
         &copy; 2025 Estação do Corpo. Todos os direitos reservados a (Lucas e Erick)
