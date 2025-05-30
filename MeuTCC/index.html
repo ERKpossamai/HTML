@@ -12,6 +12,14 @@
      <header>
       <img class="logo-img" src="img/logo.png" alt="Logo Estação do Corpo">
         <h1>Estação do corpo</h1>
+
+            <!-- Botão do menu hambúrguer -->
+            <div class="menu-toggle" id="menu-toggle">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            
         <nav class="navegation">
            <ul>
               <li><button class="btnLogin-popup">Inicio</button></li>
@@ -21,12 +29,12 @@
                 <li><a href="login.html">Login</a></li>
                 <li><a href="galeria.html">Galeria</a></li>
             </ul> 
+            <div class="carrinho" onclick="toggleCarrinho()" aria-label="Carrinho de compras">
+                <a href="carrinho.html">
+                    🛒<span id="contador" class="contador-carrinho">0</span>
+                </a>
+            </div>
         </nav>
-        <div class="carrinho" onclick="toggleCarrinho()" aria-label="Carrinho de compras">
-            <a href="carrinho.html">
-                🛒<span id="contador" class="contador-carrinho">0</span>
-              </a>
-        </div>
     </header>
     <br><br><br><br>
 
