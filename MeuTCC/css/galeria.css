@@ -1,9 +1,3 @@
-
-/* =====================================
-   🎨 RESET E CONFIGURAÇÕES GERAIS
-   Aplicação de reset para garantir 
-   consistência entre navegadores
-===================================== */
 * {
   margin: 0;
   padding: 0;
@@ -11,20 +5,14 @@
   font-family: 'Poppins', sans-serif;
 }
 
-/* =====================================
-   🖼️ BODY - Fundo e Centralização
-===================================== */
 body {
   padding-top: 100px;
-  justify-content: center;
-  align-items: center;
   min-height: 100vh;
   background: url('img/fundo.png') repeat-y center;
+  font-size: 16px;
+  line-height: 1.5;
 }
 
-/* =====================================
-   🧩 HEADER - Cabeçalho Principal
-===================================== */
 header {
   position: fixed;
   flex-wrap: wrap;
@@ -58,56 +46,6 @@ header h1 {
   overflow: hidden;
   cursor: pointer;
   max-width: 100%;
-}
-
-/* ==========================
-  🔝 CABEÇALHO E NAVEGAÇÃO
-========================== */
-header {
-  position: fixed;
-  flex-wrap: wrap;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 10px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 99;
-  background-color: rgba(0, 0, 0, 0.6);
-  -webkit-backdrop-filter: blur(20px);
-  backdrop-filter: blur(20px);
-}
-
-.header-left {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-
-header h1 {
-  font-size: clamp(1.3rem, 4vw, 2rem);
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  color: transparent;
-  -webkit-text-stroke: 1px #c73102;
-  position: relative;
-  white-space: nowrap;
-  overflow: hidden;
-  cursor: pointer;
-  max-width: 100%;
-}
-
-header h1::before {
-  content: "Estação do corpo";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 100%;
-  color: #c73102;
-  white-space: nowrap;
-  transition: width 0.6s ease-in-out;
 }
 
 header h1::before {
@@ -189,7 +127,7 @@ header h1:hover::before {
   object-fit: cover;
 }
 
-/*🍔 MENU HAMBÚRGUER*/
+/*Menu Hamburguer*/
 .menu-toggle {
   display: none;
   flex-direction: column;
@@ -206,21 +144,6 @@ header h1:hover::before {
   background: #fff;
   border-radius: 2px;
   transition: all 0.3s ease;
-}
-
-.btnLogin-popup {
-  background: transparent;
-  border: 2px solid #fff;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: .5s;
-  width: 130px;
-  height: 50px;
-}
-
-.btnLogin-popup:hover {
-  background: #fff;
-  color: #e54004;
 }
 
 .galeria {
@@ -245,8 +168,7 @@ header h1:hover::before {
 }
 
 .hero {
-    padding: 100px 20px;
-    background-size: 10px;
+    padding: 100px 20px;  
     background-size: auto;
 }
 
@@ -266,9 +188,7 @@ button:hover {
     transform: scale(1.05);
 }
 
-/* ==========================
-  🛒 CARRINHO
-========================== */
+/* Carrinho */
 .carrinho {
   position: relative;
   font-size: 1.5rem;
@@ -322,33 +242,21 @@ button:hover {
   background-color: #e0a800;
 }
 
- /* RODA PÉ */
- footer {
-   text-align: center;
-   margin-top: 50px;
-   padding: 2rem;
-   background-color: #222;
-   color: white;
-   position: fixed;
-   bottom: 0;
-   left: 0;
-   width: 100%;
-   padding: 10px;
-   text-align: center;
- }
+/* RODA PÉ */
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #222;
+  color: white;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
 
 /* ocultar a div do script */
 .oculto {
   display: none;
-}
-
-/* ==========================
-  📱 RESPONSIVIDADE
-========================== */
-/* Estilos base (mobile first) */
-body {
-  font-size: 16px;
-  line-height: 1.5;
 }
 
 /* 📱 Pequenas telas: até 480px */

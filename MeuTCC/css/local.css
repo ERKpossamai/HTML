@@ -11,10 +11,10 @@
 
 body {
   padding-top: 60px;
-  justify-content: center;
-  align-items: center;
   min-height: 100vh;
   background: url('img/fundo.png') repeat-y center;
+  font-size: 16px;
+  line-height: 1.5;
 }
 
 /* ==========================
@@ -53,18 +53,6 @@ header h1 {
   overflow: hidden;
   cursor: pointer;
   max-width: 100%;
-}
-
-header h1::before {
-  content: "Estação do corpo";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 100%;
-  color: #c73102;
-  white-space: nowrap;
-  transition: width 0.6s ease-in-out;
 }
 
 header h1::before {
@@ -165,22 +153,6 @@ header h1:hover::before {
   transition: all 0.3s ease;
 }
 
-.btnLogin-popup {
-  background: transparent;
-  border: 2px solid #fff;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: .5s;
-  width: 130px;
-  height: 50px;
-}
-
-.btnLogin-popup:hover {
-  background: #fff;
-  color: #e54004;
-}
-
-
 /* =====================================
    📍 LOCAL DO MINI MAPA
    Estilos para o mini mapa integrado na página
@@ -236,11 +208,6 @@ iframe {
 .buttons .whatsapp:hover {
   background-color: #1ebe57;
   text-decoration: none;
-  padding: 0.8rem 1.5rem;
-  border: none;
-  border-radius: 8px;
-  font-size: 16px;
-  color: #222;
 }
 
 
@@ -291,18 +258,7 @@ button:hover {
   color: inherit;
 }
 
-.contador {
-  background-color: red;
-  color: white;
-  font-size: 0.8rem;
-  padding: 2px 6px;
-  border-radius: 50%;
-  position: absolute;
-  top: -8px;
-  right: -12px;
-  text-decoration: none;
-}
-
+.contador,
 #contador {
   background-color: red;
   color: white;
@@ -364,7 +320,6 @@ button:hover {
 ===================================== */
 footer {
   text-align: center;
-  margin-top: 50px ;
   padding: 2rem;
   background-color: #222;
   color: white;
@@ -384,13 +339,6 @@ footer {
 /* =====================================
    📱 RESPONSIVIDADE
 ===================================== */
-
-    /* Estilos base (mobile first) */
-    body {
-      font-size: 16px;
-      line-height: 1.5;
-    }
-  
     /* 📱 Pequenas telas: até 480px */
     @media (max-width: 480px) {
       header {
@@ -456,7 +404,6 @@ footer {
       .container {
         max-width: 1200px;
         margin: 0 auto;
-        /* Centraliza o conteúdo */
       }
     }
   
@@ -470,26 +417,3 @@ footer {
         display: none;
       }
     }
-
-/* Estilos base (mobile first) */
-body {
-  font-size: 16px;
-  line-height: 1.5;
-}
-
-/* Tablets (≥600px) */
-@media (min-width: 600px) {
-  body {
-    font-size: 18px;
-    line-height: 1.6;
-  }
-}
-
-/* Desktops (≥992px) */
-@media (min-width: 992px) {
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    /* Centraliza o conteúdo */
-  }
-}
