@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loja de Suplementos</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+  <header>
+    <div class="header-container">
+      <h1>Produtos</h1>
+      <div class="search-box">
+        <input type="text" id="campo-pesquisa" placeholder="Buscar marca...">
+        <i class="fas fa-search"></i>
+      </div>
+    </div>
+    <div class="carrinho" id="icone-carrinho">
+      <i class="fas fa-shopping-cart"></i>
+      <span id="contador-carrinho">0</span>
+    </div>
+  </header>
+
+  <section class="categorias">
+    <h2>Categorias</h2>
+  </section>
+
+  <main>
+    <div class="produtos">
+
+      <div class="produto" data-marca="Growth" data-preco="150.00">
+        <img src="https://via.placeholder.com/150/0047ab/ffffff?text=Whey" alt="Whey">
+        <h3>Whey Protein - Growth</h3>
+        <p>R$ 150,00</p>
+        <button class="adicionar-carrinho">Adicionar</button>
+      </div>
+
+      <div class="produto" data-marca="Max Titanium" data-preco="90.00">
+        <img src="https://via.placeholder.com/150/0047ab/ffffff?text=Creatina" alt="Creatina">
+        <h3>Creatina - Max Titanium</h3>
+        <p>R$ 90,00</p>
+        <button class="adicionar-carrinho">Adicionar</button>
+      </div>
+
+      <div class="produto" data-marca="Nike" data-preco="120.00">
+        <img src="https://via.placeholder.com/150/0047ab/ffffff?text=Roupas" alt="Roupas">
+        <h3>Camiseta Nike</h3>
+        <p>R$ 120,00</p>
+        <button class="adicionar-carrinho">Adicionar</button>
+      </div>
+
+      <div class="produto" data-marca="Plano Black" data-preco="250.00">
+        <img src="https://via.placeholder.com/150/0047ab/ffffff?text=Plano" alt="Plano">
+        <h3>Plano Black</h3>
+        <p>R$ 250,00</p>
+        <button class="adicionar-carrinho">Adicionar</button>
+      </div>
+
+    </div>
+  </main>
+
+  <div id="carrinho-lateral" class="carrinho-lateral">
+    <h2>Meu Carrinho</h2>
+    <div id="itens-carrinho"></div>
+    <p>Total: R$ <span id="total-carrinho">0.00</span></p>
+    <button onclick="limparCarrinho()">Esvaziar</button>
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>

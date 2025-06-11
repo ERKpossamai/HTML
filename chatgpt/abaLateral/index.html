@@ -3,42 +3,69 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Produtos</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
 
-    <div class="titulo">
-        <h1>PRODUTOS</h1>
+    <div class="topo">
+        <div class="cabecalho">
+            <h1>PRODUTOS</h1>
+            <div class="pesquisa">
+                <input type="text" id="campo-pesquisa" placeholder="Buscar marca...">
+                <i class="fas fa-search lupa"></i>
+            </div>
+        </div>
     </div>
 
     <div class="container">
         <!-- Menu lateral -->
         <div class="menu">
-            <button>Whey</button>
-            <button>Creatina</button>
-            <button>Roupas</button>
-            <button>Planos</button>
+            <button data-categoria="todos">Todos</button>
+            <button data-categoria="whey">Whey</button>
+            <button data-categoria="creatina">Creatina</button>
+            <button data-categoria="roupas">Roupas</button>
+            <button data-categoria="planos">Planos</button>
         </div>
 
         <!-- Linha vertical -->
         <div class="linha"></div>
 
         <!-- Grade de produtos -->
-        <div class="produtos">
-            <div class="produto">Produto</div>
-            <div class="produto">Produto</div>
-            <div class="produto">Produto</div>
-            <div class="produto">Produto</div>
-            <div class="produto">Produto</div>
-            <div class="produto">Produto</div>
-            <div class="produto">Produto</div>
-            <div class="produto">Produto</div>
-            <div class="produto">Produto</div>
+        <div class="produtos-container">
+            <div class="produtos">
+                <div class="produto whey" data-marca="Growth">Whey Protein - Growth</div>
+                <div class="produto whey" data-marca="IntegralMedica">Whey - IntegralMedica</div>
+                <div class="produto creatina" data-marca="Max Titanium">Creatina - Max Titanium</div>
+                <div class="produto creatina" data-marca="Probiótica">Creatina - Probiótica</div>
+                <div class="produto roupas" data-marca="Nike">Camiseta Nike</div>
+                <div class="produto roupas" data-marca="Adidas">Short Adidas</div>
+                <div class="produto planos" data-marca="Plano Gold">Plano Gold</div>
+                <div class="produto planos" data-marca="Plano Black">Plano Black</div>
+                <div class="produto planos" data-marca="Plano Black">Plano Black</div>
+                <div class="produto planos" data-marca="Plano Black">Plano Black</div>
+                <div class="produto planos" data-marca="Plano Black">Plano Black</div>
+                <div class="produto planos" data-marca="Plano Black">Plano Black</div>
+                <div class="produto whey" data-marca="Growth">Whey Protein - Growth</div>
+                <div class="produto whey" data-marca="IntegralMedica">Whey - IntegralMedica</div>
+                <div class="produto creatina" data-marca="Max Titanium">Creatina - Max Titanium</div>
+                <div class="produto creatina" data-marca="Probiótica">Creatina - Probiótica</div>
+                <div class="produto roupas" data-marca="Nike">Camiseta Nike</div>
+                <div class="produto roupas" data-marca="Adidas">Short Adidas</div>
+                <div class="produto planos" data-marca="Plano Gold">Plano Gold</div>
+                <div class="produto planos" data-marca="Plano Black">Plano Black</div>
+                <div class="produto planos" data-marca="Plano Black">Plano Black</div>
+                <div class="produto planos" data-marca="Plano Black">Plano Black</div>
+                <div class="produto planos" data-marca="Plano Black">Plano Black</div>
+                <div class="produto planos" data-marca="Plano Black">Plano Black</div>
+            </div>
         </div>
     </div>
 
+    <script src="script.js"></script>
 </body>
 
 </html>
