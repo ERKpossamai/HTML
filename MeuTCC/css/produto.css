@@ -234,7 +234,135 @@ font-weight: bold;
 }
 
 /* Produtos */
-main {
+
+/* Topo centralizado */
+.topo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
+
+.cabecalho {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+/* Título */
+.cabecalho h1 {
+  padding: 10px 30px;
+  background: linear-gradient(to right, #3b2500, #d69d00);
+  border-radius: 20px;
+  font-size: 32px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Pesquisa */
+.pesquisa {
+  position: relative;
+}
+
+.pesquisa input {
+  padding: 12px 20px 12px 45px;
+  border-radius: 20px;
+  border: none;
+  width: 250px;
+  font-size: 16px;
+  color: black;
+  outline: none;
+}
+
+.pesquisa .lupa {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: black;
+  font-size: 18px;
+}
+
+/* Layout principal */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  padding: 20px;
+}
+
+/* Menu lateral */
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.menu button {
+  background: linear-gradient(to right, #3b2500, #d69d00);
+  border: none;
+  border-radius: 20px;
+  padding: 15px 40px;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+  transition: transform 0.2s;
+}
+
+.menu button:hover {
+  transform: scale(1.05);
+}
+
+/* Linha divisória */
+.linha {
+  width: 2px;
+  background-color: #d69d00;
+  height: 500px;
+}
+
+/* Produtos */
+.produtos-container {
+  max-height: 500px;
+  overflow-y: auto;
+  padding-right: 10px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.produtos-container::-webkit-scrollbar {
+  display: none;
+  /* Chrome, Safari e outros Webkit */
+}
+
+.produtos {
+  display: grid;
+  grid-template-columns: repeat(3, 160px);
+  gap: 30px;
+  justify-content: center;
+}
+
+.produto {
+  background-color: #0047ab;
+  border-radius: 20px;
+  width: 160px;
+  height: 160px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 15px;
+  color: white;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  transition: transform 0.3s;
+}
+
+.produto:hover {
+  transform: scale(1.05);
+}
+
+/* main {
   display: flex;
   gap: 2rem;
   justify-content: center;
@@ -291,7 +419,7 @@ main {
 
 .img-pdt {
   filter: drop-shadow(10px 0 30px yellow);
-}
+} */
 
 /* 🛒 CARRINHO DE COMPRAS */
 .carrinho {
