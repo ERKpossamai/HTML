@@ -315,22 +315,6 @@ font-weight: bold;
 .remover:hover {
   background-color: #c82333;
 }
-
- /* RODA PÉ */
- footer {
-  text-align: center;
-  margin-top: 50px ;
-  padding: 2rem;
-  background-color: #222;
-  color: white;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  padding: 10px;
-  text-align: center;
-}
-
 ═════════════════════════════════════════════════════╗ ║ 📱 RESPONSIVIDADE – MEDIA QUERIES E BREAKPOINTS ║ ╚═════════════════════════════════════════════════════╝
 
 /* Estilos base (mobile first) */

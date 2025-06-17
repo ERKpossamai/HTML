@@ -330,21 +330,6 @@ main {
   display: none;
 }
 
-footer {
-  text-align: center;
-  margin-top: 50px ;
-  padding: 2rem;
-  background-color: #222;
-  color: white;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  padding: 10px;
-  text-align: center;
-  position: fixed;
-  bottom: 0;
-}
-
 /* ==========================
   📱 RESPONSIVIDADE
 ========================== */

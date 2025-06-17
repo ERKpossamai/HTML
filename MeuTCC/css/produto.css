@@ -366,15 +366,6 @@ font-weight: bold;
   transform: scale(1.05);
 }
 
-/* main {
-  display: flex;
-  gap: 2rem;
-  justify-content: center;
-  padding: 2rem;
-  flex-wrap: wrap;
-  margin-bottom: 3rem;
-}
-
 .produtos_car {
   background: rgba(255, 255, 255, 0.1);
   border: 2px solid rgba(255, 255, 255, .5);
@@ -383,12 +374,17 @@ font-weight: bold;
   color: #ccc;
   border-radius: 12px;
   padding: 1rem;
-  width: 250px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   text-align: center;
   transition: transform 0.2s;
   -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px);
+}
+
+.preco {
+  font-weight: bold;
+  margin-bottom: 0.8rem;
+  color: #00aa55;
 }
 
 .produtos_car button {
@@ -407,6 +403,7 @@ font-weight: bold;
 
 .produtos_car img {
   width: 100%;
+  height: 50%;
   border-radius: 10px;
 }
 
@@ -415,15 +412,18 @@ font-weight: bold;
   margin: 0.5rem 0;
 }
 
-.preco {
-  font-weight: bold;
-  margin-bottom: 0.8rem;
-  color: #00aa55  ;
-}
-
 .img-pdt {
   filter: drop-shadow(10px 0 30px yellow);
-} */
+}
+
+/* main {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  padding: 2rem;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+}
 
 /* 🛒 CARRINHO DE COMPRAS */
 .carrinho {
@@ -512,21 +512,6 @@ font-weight: bold;
 
 .remover:hover {
   background-color: #c82333;
-}
-
- /* RODA PÉ */
- footer {
-  text-align: center;
-  margin-top: 50px ;
-  padding: 2rem;
-  background-color: #222;
-  color: white;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  padding: 10px;
-  text-align: center;
 }
 
 /* ocultar a div do script */
