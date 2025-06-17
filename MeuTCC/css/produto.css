@@ -9,9 +9,6 @@
 }
 
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   min-height: 100vh;
   margin-top: 82px;
   background: url('img/fundo.png') repeat-y center;
@@ -252,6 +249,7 @@ font-weight: bold;
 
 /* Título */
 .cabecalho h1 {
+  color: #fff;
   padding: 10px 30px;
   background: linear-gradient(to right, #3b2500, #d69d00);
   border-radius: 20px;
@@ -326,7 +324,7 @@ font-weight: bold;
 .produtos-container {
   max-height: 500px;
   overflow-y: auto;
-  padding-right: 10px;
+  padding-right: 100px;
   overflow: -moz-scrollbars-none; /* Firefox */
   &::-webkit-scrollbar {
     display: none; /* Chrome, Safari, and Opera */
@@ -347,27 +345,9 @@ font-weight: bold;
 }
 
 .produto {
-  background-color: #0047ab;
-  border-radius: 20px;
-  width: 160px;
-  height: 160px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  font-size: 15px;
-  color: white;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-  padding: 10px;
-  transition: transform 0.3s;
-}
-
-.produto:hover {
-  transform: scale(1.05);
-}
-
-.produtos_car {
   background: rgba(255, 255, 255, 0.1);
+  height: 350px;
+  width: 190px;
   border: 2px solid rgba(255, 255, 255, .5);
   border-radius: 20px;
   box-shadow: 0 0 30px rgba(0, 0, 0, .5);
@@ -376,9 +356,13 @@ font-weight: bold;
   padding: 1rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   text-align: center;
-  transition: transform 0.2s;
   -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px);
+  transition: transform 0.3s;
+}
+
+.produto:hover {
+  transform: scale(1.05);
 }
 
 .preco {
