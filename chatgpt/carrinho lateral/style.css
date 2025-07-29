@@ -10,7 +10,7 @@ body {
   color: #fff;
   overflow-x: hidden;
   -ms-overflow-style: none;
-  scrollbar-width: none;
+  /* scrollbar-width: none; */
 }
 
 body::-webkit-scrollbar {

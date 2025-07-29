@@ -221,33 +221,6 @@ section h2 {
 .navegation__btn-login:hover {
   background: #fff;
   color: #e54004;
-}
-
-.ref-cariani {
-  display: flex;           
-  flex-direction: row;     
-  align-items: flex-start; 
-  margin-bottom: 2rem;       
-}
-
-/* Cariani */
-.frase_cariani {
-  font-weight: 500;
-  line-height: 1.5;
-  font-style: italic;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  position: relative; 
-  top: -20px;
-  left: 20px;
-  font-size: 1.5rem;
-  color: #fff;
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 20px;
-  border-radius: 10px;
-  max-width: 400px;
-  margin-left: 20px; 
-  text-align: left;
-  transition: transform 0.3s ease;
 } 
 
 /* Carrinho */
