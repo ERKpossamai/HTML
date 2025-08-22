@@ -1,0 +1,195 @@
+/* --- Configurações Gerais --- */
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* --- Barra de Navegação --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    border-bottom: 1px solid #222;
+}
+
+.logo a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.5em;
+    /* Adicione a URL do seu logo aqui se for uma imagem */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1em;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: #E65100; /* Laranja da sua marca */
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.login-button {
+    border: 1px solid #fff;
+    padding: 8px 25px;
+    border-radius: 5px;
+    color: #fff;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.login-button:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+.cart-icon {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2em;
+    position: relative;
+}
+
+.cart-count {
+    position: absolute;
+    top: -8px;
+    right: -12px;
+    background-color: #E65100;
+    color: #fff;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 0.7em;
+    font-weight: 700;
+}
+
+/* --- Conteúdo da Página de Serviços --- */
+.services-page {
+    padding: 40px 8%;
+    max-width: 1400px;
+    margin: auto;
+}
+
+.intro-section, .personal-trainers-section, .equipment-section {
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.intro-section h1, .personal-trainers-section h2, .equipment-section h2 {
+    font-size: 2.8em;
+    color: #E65100;
+    margin-bottom: 15px;
+}
+
+.intro-section p, .personal-trainers-section p, .equipment-section p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+    color: #ccc;
+}
+
+/* --- Seção dos Personal Trainers --- */
+.trainers-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.trainer-card {
+    background-color: #111;
+    border: 1px solid #222;
+    border-radius: 10px;
+    width: 320px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.trainer-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(230, 81, 0, 0.1);
+}
+
+.trainer-card img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    display: block;
+}
+
+.trainer-info {
+    padding: 20px;
+}
+
+.trainer-info h3 {
+    font-size: 1.8em;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.trainer-details {
+    text-align: left;
+    margin-bottom: 25px;
+    color: #bbb;
+}
+
+.trainer-details p {
+    margin-bottom: 10px;
+    font-size: 0.95em;
+    line-height: 1.5;
+}
+
+.hire-button {
+    background-color: #E65100;
+    color: #fff;
+    border: none;
+    padding: 12px 0;
+    width: 100%;
+    font-size: 1.1em;
+    font-weight: 700;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.hire-button:hover {
+    background-color: #FF6D00;
+}
+
+/* --- Seção de Equipamentos --- */
+.equipment-gallery {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.equipment-gallery img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 8px;
+    border: 2px solid #333;
+    transition: transform 0.3s;
+}
+
+.equipment-gallery img:hover {
+    transform: scale(1.05);
+}

@@ -133,39 +133,38 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.navegation a').forEach(link => {
     link.addEventListener('click', () => {
       navegation.classList.remove('active');
+      
     });
+  
   });
-});
+//manda os planos para o banco
 
-// Filtro por categoria
-document.querySelectorAll('.menu button').forEach(button => {
-  button.addEventListener('click', () => {
-    const categoria = button.getAttribute('data-categoria');
-    document.querySelectorAll('.produto').forEach(produto => {
-      if (categoria === 'todos' || produto.classList.contains(categoria)) {
-        produto.style.display = 'flex';
-      } else {
-        produto.style.display = 'none';
-      }
-    });
-  });
-});
-
-// Filtro por pesquisa
-document.getElementById('campo-pesquisa').addEventListener('input', () => {
-  const termo = document.getElementById('campo-pesquisa').value.toLowerCase();
-  document.querySelectorAll('.produto').forEach(produto => {
-    const marca = produto.getAttribute('data-marca').toLowerCase();
-    if (marca.includes(termo)) {
-      produto.style.display = 'flex';
-    } else {
-      produto.style.display = 'none';
+  function finalizarCompra() {
+    if (carrinho.length === 0) {
+        alert("Seu carrinho está vazio!");
+        return;
     }
-  });
-});
 
-// Interação com botão "Saiba Mais"
-document.getElementById("saibaMaisBtn").addEventListener("click", function () {
-  alert("Obrigado por visitar! Confira nossos produtos!!!. 🚀");
-  window.location.href = 'produto.html';
+    // Considerando apenas 1 plano por vez
+    let plano = carrinho[0];
+
+    fetch("finalizar_compra.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(plano)
+    })
+    .then(res => res.json())
+    .then(data => {
+        if (data.status === "ok") {
+            alert("Compra finalizada com sucesso!");
+            window.location.href = "painel.php"; // redireciona para o painel
+        } else {
+            alert("Erro: " + data.msg);
+        }
+    })
+    .catch(err => console.error(err));
+}
+
+
+  
 });

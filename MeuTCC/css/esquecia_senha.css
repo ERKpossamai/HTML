@@ -1,0 +1,90 @@
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    width: 90%;
+    max-width: 500px;
+    margin: 100px auto;
+    padding: 30px;
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.container h2 {
+    color: #ffcc00;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.container p {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.container label {
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.container input[type="email"],
+.container input[type="password"] {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #555;
+    background-color: #333;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.container button {
+    padding: 12px;
+    background-color: #00ff00;
+    color: #000;
+    font-size: 1.1em;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.container button:hover {
+    background-color: #00e600;
+}
+
+.container a {
+    color: #ffcc00;
+    text-decoration: none;
+    text-align: center;
+    margin-top: 15px;
+    display: block;
+}
+
+.container a:hover {
+    text-decoration: underline;
+}
+.container .back-link {
+    display: block;
+    margin-top: 20px;
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.container .back-link:hover {
+    background-color: #555;
+}
