@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Produtos</title>
+  <link rel="stylesheet" href="css/produto.css" />
+  <link rel="icon" href="img/logo.png" type="image/x-icon" />
+</head>
+<body>
+  <header>
+    <img class="logo-img" src="img/logo.png" alt="Logo Estação do Corpo">
+    <h1>Estação do corpo</h1>
+
+        <!-- Botão do menu hambúrguer -->
+        <div class="menu-toggle" id="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        
+    <nav class="navegation">
+     <ul>
+        <li><a href="inicio.php">Início</a></li>
+        <li><a href="planos.html">Planos</a></li>
+        <li><button class="btnLogin-popup">Produtos</button></li>
+        <li><a href="local.html">Localização</a></li>
+     </ul>
+     <div class="carrinho" onclick="toggleCarrinho()" aria-label="Carrinho de compras">
+          <a href="carrinho.html">
+            🛒<span id="contador" class="contador-carrinho">0</span>
+          </a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="produtos_car">
+      <img class="img-pdt" src="img/produto1.png" alt="Pré-treino em oferta" />
+      <h2>Pré-treino em oferta</h2>
+      <p class="preco">R$149,90</p>
+      <button onclick="adicionarAoCarrinho('Pré-treino em oferta', 149.90)">Adicionar ao Carrinho</button>
+    </div>
+
+    <div class="produtos_car">
+      <img class="img-pdt" src="img/produto2.png" alt="Pré-treino monstro" />
+      <h2>Pré-treino monstro</h2>
+      <p class="preco">R$179,99</p>
+      <button onclick="adicionarAoCarrinho('Pré-treino monstro', 179.99)">Adicionar ao carrinho</button>
+    </div>
+
+    <div class="produtos_car">
+      <img class="img-pdt" src="img/produto3.png" alt="Combo monstro" />
+      <h2>Combo monstro</h2>
+      <p class="preco">R$209,99</p>
+      <button onclick="adicionarAoCarrinho('Combo monstro', 209.99)">Adicionar ao carrinho</button>
+    </div>
+
+      <div class="produtos_car">
+      <img class="img-pdt" src="img/c4.png.png" alt="Pré-treino C4" />
+      <h2>Pré treino C4</h2>
+      <p class="preco">R$149.98</p>
+      <button onclick="adicionarAoCarrinho('Pré-treino C4', 149.98)">Adicionar ao carrinho</button>
+    </div>
+
+      <div class="produtos_car">
+      <img class="img-pdt" src="img/whey.png" alt="Whey protein" />
+      <h2>Whey Protein</h2>
+      <p class="preco">R$124,90</p>
+      <button onclick="adicionarAoCarrinho('Whey protein', 124.90)">Adicionar ao carrinho</button>
+    </div>
+
+      <div class="produtos_car">
+      <img class="img-pdt" src="img/megatron.png" alt="Megatron Creatina" />
+      <h2>Megatron Creatina</h2>
+      <p class="preco">R$99,90</p>
+      <button onclick="adicionarAoCarrinho('Creatina Megatron', 99.90)">Adicionar ao carrinho</button>
+    </div>
+
+      <div class="produtos_car">
+      <img class="img-pdt" src="img/diemetal.png" alt="Diemetal Creatina" />
+      <h2>Diemetal Creatina</h2>
+      <p class="preco">R$109,99</p>
+      <button onclick="adicionarAoCarrinho('Diemetal Creatina', 109.99)">Adicionar ao carrinho</button>
+    </div>
+
+      <div class="produtos_car">
+      <img class="img-pdt" src="img/bope.png" alt="Pré-treino Bope" />
+      <h2>Pré-treino Bope</h2>
+      <p class="preco">R$35,99</p>
+      <button onclick="adicionarAoCarrinho('Pré-treino Bope', 35.99)">Adicionar ao carrinho</button>
+    </div>
+  </main>
+
+   <div class="oculto">
+    <!-- Carrinho Detalhado -->
+   <div id="carrinho-detalhes" class="oculto">
+    <ul id="lista-carrinho"></ul>
+    <p><strong>Total:</strong> R$ <span id="total">0.00</span></p>
+    <button onclick="finalizarCompra()" class="finalizar">Finalizar Compra</button>
+  </div>
+   </div>
+
+  <footer>
+    &copy; 2025 Estação do corpo. Todos os direitos reservados a (Lucas e Erick)
+  </footer>
+
+  <script async src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carrinho</title>
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<link rel="stylesheet" href="css/carrinho.css">
+<link rel="icon" href="img/logo.png" type="image/x-icon" />
+</head>
+<body>
+    <header>
+        <img class="logo-img" src="img/logo.png" alt="Logo Estação do Corpo" >
+        <h1>Estação do corpo</h1>
+        <div class="carrinho" onclick="toggleCarrinho()" aria-label="Carrinho de compras">
+          <a href="produto.html">
+            <h3>X</h3>
+            </a>
+      </div>
+    </header>
+ 
+    <!-- Carrinho Detalhado -->
+  <div id="carrinho-detalhes" class="oculto">
+    <h1>Seu Carrinho</h1>
+    <ul id="lista-carrinho"></ul>
+    <p><strong>Total:</strong> R$ <span id="total">0.00</span></p>
+   <button onclick="finalizarCompra()" class="finalizar">Finalizar Compra</button>
+  </div>
+
+  <script async src="js/script.js">
+    function carregarCarrinho() {
+      const container = document.getElementById('itens-carrinho');
+      const carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+      let total = 0;
+  
+      container.innerHTML = '';
+  
+      if (carrinho.length === 0) {
+        container.innerHTML = "<p>Seu carrinho está vazio.</p>";
+        document.getElementById('total').textContent = '';
+        return;
+      }
+  
+      carrinho.forEach((produto, index) => {
+        total += produto.preco * produto.quantidade;
+  
+        const item = document.createElement('div');
+        item.className = "produto";
+        item.innerHTML = `
+          <h3>${produto.nome}</h3>
+          <p>Preço: R$ ${produto.preco.toFixed(2)}</p>
+          <p>Quantidade: ${produto.quantidade}</p>
+          <button onclick="removerItem(${index})">Remover</button>
+        `;
+        container.appendChild(item);
+      });
+  
+      document.getElementById('total').textContent = `Total: R$ ${total.toFixed(2)}`;
+    }
+  
+    function removerItem(index) {
+      let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+      carrinho.splice(index, 1);
+      localStorage.setItem('carrinho', JSON.stringify(carrinho));
+      carregarCarrinho();
+    }
+  
+    carregarCarrinho();
+  </script>
+</body>
+</html>

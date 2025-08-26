@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Localização</title>
+    <link rel="stylesheet" href="css/local.css">
+    <link rel="icon" href="img/logo.png" type="image/x-icon" />
+</head>
+
+<body>
+    <header>
+        <img class="logo-img" src="img/logo.png" alt="Logo Estação do Corpo">
+        <h1>Estação do corpo</h1>
+
+            <!-- Botão do menu hambúrguer -->
+        <div class="menu-toggle" id="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+            
+        <nav class="navegation">
+            <ul>   
+                <li><a href="inicio.php">Início</a></li>
+                <li><a href="planos.html">Planos</a></li>
+                <li><a href="produto.html">Produtos</a></li>
+                <li><button class="btnLogin-popup">Localização</button></li>
+            </ul>
+        <div class="carrinho" onclick="toggleCarrinho()" aria-label="Carrinho de compras">
+            <a href="carrinho.html">
+                🛒<span id="contador">0</span>
+            </a>
+        </div>
+        </nav>
+
+       
+    </header>
+
+    <section>
+        <h2>Você pode nos visitar no endereço abaixo. Esperamos por você!</h2>
+
+        <!-- Mapa incorporado do Google Maps -->
+        <iframe title="Google Maps Embed" class="google-map"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7417148.414005713!2d-63.056364975!3d-24.807281599999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94f231f9dc715d6b%3A0x24c3de8713cd80a5!2sEsta%C3%A7%C3%A3o%20Do%20Corpo%20Academia!5e0!3m2!1spt-BR!2sbr!4v1744201947662!5m2!1spt-BR!2sbr"
+            width="600" height="450" allowfullscreen="" loading="lazy">
+        </iframe>
+
+        <!-- Botões -->
+        <div class="buttons">
+            <a href="inicio.html" class="lc">← Voltar ao início</a>
+            <a href="https://www.google.com/maps/dir/-24.8035158,-53.2953563/Estação+Do+Corpo+Academia+-+Vila+São+José,+Corbélia+-+PR,+85420-000/@-24.8044707,-53.2990694,17z/data=!4m9!4m8!1m0!1m5!1m1!1s0x94f231f9dc715d6b:0x24c3de8713cd80a5!2m2!1d-53.3005802!2d-24.807255!3e2?hl=pt-BR&entry=ttu" rel="noopener"
+                target="_blank" class="lc" title="Ver Rotas">🗺 Ver Rotas</a>
+            <a href="https://wa.me/45999266769" class="whatsapp" target="_blank" rel="noopener">Chamar no WhatsApp</a>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2025 Estação do Corpo. Todos os direitos reservados a (Lucas e Erick)
+    </footer>
+
+    <div class="oculto">
+        <!-- Carrinho Detalhado -->
+        <div id="carrinho-detalhes" class="oculto">
+            <ul id="lista-carrinho"></ul>
+            <p><strong>Total:</strong> R$ <span id="total">0.00</span></p>
+            <button onclick="finalizarCompra()" class="finalizar">Finalizar Compra</button>
+        </div>
+    </div>
+
+    <script async src="js/script.js"></script>
+
+</body>
+
+</html>
