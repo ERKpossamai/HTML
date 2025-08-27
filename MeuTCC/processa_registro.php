@@ -1,5 +1,7 @@
 <?php
 session_start();
+// Inclui o arquivo de conexão com o banco de dados.
+// Ele deve criar a variável $pdo.
 include 'conexao.php';
 
 if (isset($_POST['nome']) && isset($_POST['email']) && isset($_POST['senha'])) {
@@ -15,28 +17,24 @@ if (isset($_POST['nome']) && isset($_POST['email']) && isset($_POST['senha'])) {
 
     $senha_hash = password_hash($senha, PASSWORD_DEFAULT);
 
-    $stmt = $conn->prepare("SELECT id FROM usuarios WHERE email = ?");
-    $stmt->bind_param("s", $email);
-    $stmt->execute();
-    $result = $stmt->get_result();
+    // Usa PDO para verificar se o e-mail já existe
+    $stmt = $pdo->prepare("SELECT id FROM usuarios WHERE email = ?");
+    $stmt->execute([$email]);
+    $usuario = $stmt->fetch();
 
-    if ($result->num_rows > 0) {
+    if ($usuario) {
         $_SESSION['registro_erro'] = "Este e-mail já está cadastrado.";
         header("Location: registrar.php");
         exit();
     }
 
-    $stmt->close();
-
-    // PARTE ATUALIZADA:
-    // 1. A instrução SQL agora inclui 'plano' e 'data_matricula'
-    // 2. Os valores correspondentes são adicionados abaixo
+    // A instrução SQL agora inclui 'plano' e 'data_matricula'
     $plano_padrao = "Plano Básico";
     
-    $stmt = $conn->prepare("INSERT INTO usuarios (nome, email, senha, plano, data_matricula) VALUES (?, ?, ?, ?, CURDATE())");
-    $stmt->bind_param("ssss", $nome, $email, $senha_hash, $plano_padrao);
-
-    if ($stmt->execute()) {
+    // Usa PDO para inserir o novo usuário
+    $stmt = $pdo->prepare("INSERT INTO usuarios (nome, email, senha, plano, data_matricula) VALUES (?, ?, ?, ?, CURDATE())");
+    
+    if ($stmt->execute([$nome, $email, $senha_hash, $plano_padrao])) {
         $_SESSION['registro_sucesso'] = "Conta criada com sucesso! Faça login para continuar.";
         header("Location: login.php");
         exit();
@@ -45,11 +43,9 @@ if (isset($_POST['nome']) && isset($_POST['email']) && isset($_POST['senha'])) {
         header("Location: registrar.php");
         exit();
     }
-
-    $stmt->close();
 } else {
     header("Location: registrar.php");
     exit();
 }
-$conn->close();
+// Não é necessário fechar a conexão PDO
 ?>
