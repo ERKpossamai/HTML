@@ -30,6 +30,7 @@ if (!isset($_SESSION['usuario_logado']) || $_SESSION['is_admin'] !== 1) {
         <nav class="nav-admin">
             <a href="cadastrar-personal.php">Cadastrar Personal</a>
             <a href="gerenciar-usuarios.php">Gerenciar Usuários</a>
+            <a href="editar-usuarios.php">Editar Usuários</a>
             <a href="logout.php" class="btn-logout">Sair</a>
         </nav>
     </header>
