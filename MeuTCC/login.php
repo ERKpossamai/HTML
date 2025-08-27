@@ -1,7 +1,9 @@
 <?php
 session_start();
 
-include 'conexao.php'; // Inclui a conexão com $conn
+// Inclui o arquivo de conexão com o banco de dados.
+// Ele deve criar a variável $pdo.
+include 'conexao.php';
 
 $erro = '';
 
@@ -10,45 +12,68 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $senha = $_POST['senha'];
 
-    // Prepara e executa a busca do usuário
-    $stmt = $conn->prepare("SELECT id, nome, senha, is_admin FROM usuarios WHERE email = ?");
-    $stmt->bind_param("s", $email);
-    $stmt->execute();
-    $result = $stmt->get_result();
-    $usuario = $result->fetch_assoc();
+    // --- 1. VERIFICAÇÃO DE BLOQUEIO ---
+    $stmt_bloqueio = $pdo->prepare("SELECT bloqueado_ate FROM tentativas_login WHERE email = ?");
+    $stmt_bloqueio->execute([$email]);
+    $bloqueio = $stmt_bloqueio->fetch(PDO::FETCH_ASSOC);
 
-    // Verifica se o usuário existe e a senha está correta
-    if ($usuario && password_verify($senha, $usuario['senha'])) {
-        
-        $_SESSION['usuario_logado'] = true;
-        $_SESSION['usuario_id'] = $usuario['id'];
-        $_SESSION['usuario_nome'] = $usuario['nome'];
-        $_SESSION['is_admin'] = $usuario['is_admin'];
-
-        // Registra a data e hora do último login
-        $sql_login = "UPDATE usuarios SET ultimo_login = NOW() WHERE id = ?";
-        $stmt_login = $conn->prepare($sql_login);
-        $stmt_login->bind_param("i", $_SESSION['usuario_id']);
-        $stmt_login->execute();
-        $stmt_login->close();
-
-        // Redireciona com base na permissão
-        if ($_SESSION['is_admin'] == 1) { 
-            header("Location: dashboard-admin.php");
-        } else {
-            header("Location: inicio.php");
-        }
-        exit();
+    if ($bloqueio && strtotime($bloqueio['bloqueado_ate']) > time()) {
+        $erro = "Excedidas as tentativas, tente novamente em 1 minuto.";
     } else {
-        $erro = "E-mail ou senha incorretos.";
-    }
+        // --- 2. PROCESSO DE LOGIN NORMAL ---
+        $stmt = $pdo->prepare("SELECT id, nome, senha, is_admin FROM usuarios WHERE email = ?");
+        $stmt->execute([$email]);
+        $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    $stmt->close();
+        if ($usuario && password_verify($senha, $usuario['senha'])) {
+            // Login bem-sucedido
+            $_SESSION['usuario_logado'] = true;
+            $_SESSION['usuario_id'] = $usuario['id'];
+            $_SESSION['usuario_nome'] = $usuario['nome'];
+            $_SESSION['is_admin'] = $usuario['is_admin'];
+
+            // Reseta as tentativas de login após o sucesso
+            $stmt_reset = $pdo->prepare("DELETE FROM tentativas_login WHERE email = ?");
+            $stmt_reset->execute([$email]);
+
+            // Redireciona com base na permissão
+            if ($usuario['is_admin'] == 1) { 
+                header("Location: dashboard-admin.php");
+            } else {
+                header("Location: inicio.php");
+            }
+            exit();
+        } else {
+            // Login falhou: registra a tentativa
+            $erro = "E-mail ou senha incorretos.";
+            
+            // Incrementa o contador de tentativas
+            $stmt_count = $pdo->prepare("SELECT tentativas FROM tentativas_login WHERE email = ?");
+            $stmt_count->execute([$email]);
+            $tentativas_atuais = $stmt_count->fetchColumn();
+
+            if ($tentativas_atuais === false) {
+                // Primeira tentativa de erro: insere um novo registro
+                $stmt_insert = $pdo->prepare("INSERT INTO tentativas_login (email, tentativas, hora_ultima_tentativa) VALUES (?, 1, NOW())");
+                $stmt_insert->execute([$email]);
+            } else {
+                $novas_tentativas = $tentativas_atuais + 1;
+                $bloqueado_ate = null;
+                if ($novas_tentativas >= 3) {
+                    $bloqueado_ate = date('Y-m-d H:i:s', strtotime('+1 minute'));
+                }
+                
+                // Atualiza o registro de tentativas
+                $stmt_update = $pdo->prepare("UPDATE tentativas_login SET tentativas = ?, hora_ultima_tentativa = NOW(), bloqueado_ate = ? WHERE email = ?");
+                $stmt_update->execute([$novas_tentativas, $bloqueado_ate, $email]);
+            }
+        }
+    }
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -57,16 +82,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="stylesheet" href="css/login.css" />
     <link rel="icon" href="img/logo.png" type="image/x-icon" />
 </head>
+
 <body>
     <header>
         <img class="logo-img" src="img/logo.png" alt="Logo Estação do Corpo" />
         <h1>Estação do corpo</h1>
+
         <div class="menu-toggle" id="menu-toggle">
             <span></span>
             <span></span>
             <span></span>
         </div>
     </header>
+
     <div class="wrapper">
         <div class="form-box login">
             <h2>Login</h2>
@@ -77,6 +105,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <input type="email" id="email-login" name="email" required />
                     <label for="email-login">Email</label>
                 </div>
+                
                 <div class="input-box">
                     <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
                     <input type="password" id="senha-login" name="senha" required />
@@ -94,6 +123,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
             </form>
         </div>
+
         <div class="form-box register">
             <h2>Registrar</h2>
             <form action="processa_registro.php" method="POST">
@@ -124,8 +154,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </form>
         </div>
     </div>
+
     <script src="js/script.js" defer></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js" defer></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js" defer></script>
 </body>
+
 </html>
