@@ -1,39 +1,40 @@
 <?php
 session_start();
-// Inclui o arquivo de conexão com o banco de dados.
-// Ele deve criar a variável $pdo.
-include 'conexao.php';
+include 'conexao.php'; // Aqui já temos $pdo
 
 if (isset($_POST['nome']) && isset($_POST['email']) && isset($_POST['senha'])) {
     $nome = $_POST['nome'];
     $email = $_POST['email'];
     $senha = $_POST['senha'];
 
+    // Verificação de campos
     if (empty($nome) || empty($email) || empty(trim($senha))) {
         $_SESSION['registro_erro'] = "Todos os campos são obrigatórios.";
         header("Location: registrar.php");
         exit();
     }
 
+    // Cria o hash da senha
     $senha_hash = password_hash($senha, PASSWORD_DEFAULT);
 
-    // Usa PDO para verificar se o e-mail já existe
+    // Verifica se o email já existe
     $stmt = $pdo->prepare("SELECT id FROM usuarios WHERE email = ?");
     $stmt->execute([$email]);
-    $usuario = $stmt->fetch();
+    $result = $stmt->fetch();
 
-    if ($usuario) {
+    if ($result) {
         $_SESSION['registro_erro'] = "Este e-mail já está cadastrado.";
         header("Location: registrar.php");
         exit();
     }
 
-    // A instrução SQL agora inclui 'plano' e 'data_matricula'
+    // Define plano padrão
     $plano_padrao = "Plano Básico";
-    
-    // Usa PDO para inserir o novo usuário
-    $stmt = $pdo->prepare("INSERT INTO usuarios (nome, email, senha, plano, data_matricula) VALUES (?, ?, ?, ?, CURDATE())");
-    
+
+    // Insere novo usuário
+    $stmt = $pdo->prepare("INSERT INTO usuarios (nome, email, senha, plano, data_matricula) 
+                           VALUES (?, ?, ?, ?, CURDATE())");
+
     if ($stmt->execute([$nome, $email, $senha_hash, $plano_padrao])) {
         $_SESSION['registro_sucesso'] = "Conta criada com sucesso! Faça login para continuar.";
         header("Location: login.php");
@@ -47,5 +48,4 @@ if (isset($_POST['nome']) && isset($_POST['email']) && isset($_POST['senha'])) {
     header("Location: registrar.php");
     exit();
 }
-// Não é necessário fechar a conexão PDO
 ?>

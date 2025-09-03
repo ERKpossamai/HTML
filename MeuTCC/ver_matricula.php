@@ -9,12 +9,13 @@ if (!isset($_SESSION['usuario_logado']) || $_SESSION['usuario_logado'] !== true)
 }
 
 // O código abaixo só será executado se o usuário estiver logado.
-include 'conexao.php'; // Inclui o arquivo de conexão PDO
+include 'conexao.php'; // Inclui o arquivo de conexão PDO, que define a variável $pdo
 
 // Pega o ID do usuário da sessão
 $usuario_id = $_SESSION['usuario_id'];
 
 // --- 1. Consulta para os detalhes da matrícula do usuário ---
+// Usando PDO:
 try {
     $stmt = $pdo->prepare("SELECT nome, email, data_matricula FROM usuarios WHERE id = ?");
     $stmt->execute([$usuario_id]);
@@ -22,7 +23,7 @@ try {
 
     // Verifica se o usuário foi encontrado
     if (!$usuario) {
-        // Redireciona ou exibe uma mensagem de erro
+        // Redireciona para o dashboard ou exibe uma mensagem de erro
         header("Location: dashboard.php");
         exit();
     }
@@ -43,27 +44,12 @@ try {
         $nome_personal = htmlspecialchars($resultado_personal['nome_personal']);
     }
 
-    // --- 3. Consulta para o plano do usuário ---
-    $nome_plano = "Nenhum plano ativo"; // Valor padrão
-    $preco_plano = "N/A";
-
-    // CORREÇÃO AQUI: Mudei a coluna de 'total' para 'preco'
-    $sql_plano = "SELECT plano, preco FROM planos WHERE usuario_id = ? ORDER BY criado_em DESC LIMIT 1";
-    
-    $stmt_plano = $pdo->prepare($sql_plano);
-    $stmt_plano->execute([$usuario_id]);
-    $resultado_plano = $stmt_plano->fetch(PDO::FETCH_ASSOC);
-
-    if ($resultado_plano) {
-        $nome_plano = htmlspecialchars($resultado_plano['plano']);
-        $preco_plano = $resultado_plano['preco']; // Pega o valor da coluna 'preco'
-    }
-
 } catch (PDOException $e) {
     die("Erro na consulta ao banco de dados: " . $e->getMessage());
 }
-?>
 
+// Não é necessário fechar a conexão ($pdo->close()) pois o PDO a gerencia automaticamente.
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -118,21 +104,6 @@ try {
         </div>
         <div class="data-item">
             <strong>Data da Matrícula:</strong> <?php echo htmlspecialchars($usuario['data_matricula']); ?>
-        </div>
-        <div class="data-item">
-            <strong>Plano:</strong> <?php echo $nome_plano; ?>
-        </div>
-        <div class="data-item">
-            <strong>Preço:</strong>
-            <?php
-            // Verifica se o preço é um número. Se for, formata.
-            if (is_numeric($preco_plano)) {
-                echo 'R$ ' . number_format($preco_plano, 2, ',', '.');
-            } else {
-                // Se não for um número (como "N/A"), exibe a string.
-                echo $preco_plano;
-            }
-            ?>
         </div>
         <div class="data-item">
             <strong>Personal Trainer:</strong> <?php echo $nome_personal; ?>
