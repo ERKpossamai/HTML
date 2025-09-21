@@ -1,6 +1,7 @@
 <?php
 session_start();
 
+// Garante que o arquivo de conexão PDO seja incluído
 include 'conexao.php';
 
 $usuario_logado = isset($_SESSION['usuario_id']);
@@ -14,17 +15,14 @@ $mensagem_erro = '';
 if ($usuario_logado) {
     // 1. Verifica se o usuário já tem um contrato e qual o ID do personal
     $sql_contrato_existente = "SELECT id_personal FROM contratos_personal WHERE id_usuario = ?";
-    $stmt_contrato = $conn->prepare($sql_contrato_existente);
-    $stmt_contrato->bind_param("i", $id_usuario);
-    $stmt_contrato->execute();
-    $resultado_contrato = $stmt_contrato->get_result();
-    
-    if ($resultado_contrato->num_rows > 0) {
+    $stmt_contrato = $pdo->prepare($sql_contrato_existente);
+    $stmt_contrato->execute([$id_usuario]);
+    $dados_contrato = $stmt_contrato->fetch(PDO::FETCH_ASSOC);
+
+    if ($dados_contrato) {
         $tem_contrato = true;
-        $dados_contrato = $resultado_contrato->fetch_assoc();
         $id_personal_contratado = $dados_contrato['id_personal'];
     }
-    $stmt_contrato->close();
 
     if (isset($_SESSION['sucesso_contrato'])) {
         $mensagem_sucesso = $_SESSION['sucesso_contrato'];
@@ -37,9 +35,8 @@ if ($usuario_logado) {
 }
 
 $sql_personais = "SELECT id_personal, nome_personal, especialidade, bio, foto FROM personais";
-$resultado_personais = $conn->query($sql_personais);
+$stmt_personais = $pdo->query($sql_personais);
 
-$conn->close();
 ?>
 
 <!DOCTYPE html>
@@ -66,7 +63,6 @@ $conn->close();
                 <li><a href="local.html">Localização</a></li>
             </ul>
             <div class="nav-actions">
-         
                 <a href="carrinho.html" class="cart-icon">🛒<span class="cart-count">0</span></a>
             </div>
         </nav>
@@ -93,8 +89,8 @@ $conn->close();
 
             <div class="trainers-container">
                 <?php
-                if ($resultado_personais->num_rows > 0) {
-                    while ($personal = $resultado_personais->fetch_assoc()) {
+                if ($stmt_personais->rowCount() > 0) {
+                    while ($personal = $stmt_personais->fetch(PDO::FETCH_ASSOC)) {
                         $caminho_foto = 'img/' . htmlspecialchars($personal['foto']);
                 ?>
                         <div class="trainer-card">
