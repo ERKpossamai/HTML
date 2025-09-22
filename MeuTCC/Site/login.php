@@ -1,51 +1,76 @@
 <?php
 session_start();
 
-$host = 'localhost';
-$dbname = 'estacao';
-$user = 'root';
-$pass = '';
-$erro = '';
+// Inclui o arquivo de conexão com o banco de dados.
+// Ele deve criar a variável $pdo.
+include 'conexao.php';
 
-try {
-    // Conecta ao banco de dados usando PDO
-    $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $user, $pass);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
-    die("Erro na conexão com o banco de dados: " . $e->getMessage());
-}
+$erro = '';
 
 // Verifica se o formulário foi enviado
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $senha = $_POST['senha'];
 
-    // Prepara e executa a busca do usuário
-    $stmt = $pdo->prepare("SELECT id, nome, senha, is_admin FROM usuarios WHERE email = ?");
-    $stmt->execute([$email]);
-    $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
+    // --- 1. VERIFICAÇÃO DE BLOQUEIO ---
+    $stmt_bloqueio = $pdo->prepare("SELECT bloqueado_ate FROM tentativas_login WHERE email = ?");
+    $stmt_bloqueio->execute([$email]);
+    $bloqueio = $stmt_bloqueio->fetch(PDO::FETCH_ASSOC);
 
-    // Verifica se o usuário existe e a senha está correta
-    if ($usuario && password_verify($senha, $usuario['senha'])) {
-        
-        $_SESSION['usuario_logado'] = true;
-        $_SESSION['usuario_id'] = $usuario['id'];
-        $_SESSION['usuario_nome'] = $usuario['nome'];
-        $_SESSION['is_admin'] = $usuario['is_admin'];
-
-        // Redireciona com base na permissão
-        if ($_SESSION['is_admin'] == 1) { 
-            header("Location: dashboard-admin.php");
-        } else {
-            header("Location: inicio.php");
-        }
-        exit();
+    if ($bloqueio && strtotime($bloqueio['bloqueado_ate']) > time()) {
+        $erro = "Excedidas as tentativas, tente novamente em 1 minuto.";
     } else {
-        $erro = "E-mail ou senha incorretos.";
+        // --- 2. PROCESSO DE LOGIN NORMAL ---
+        $stmt = $pdo->prepare("SELECT id, nome, senha, is_admin FROM usuarios WHERE email = ?");
+        $stmt->execute([$email]);
+        $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($usuario && password_verify($senha, $usuario['senha'])) {
+            // Login bem-sucedido
+            $_SESSION['usuario_logado'] = true;
+            $_SESSION['usuario_id'] = $usuario['id'];
+            $_SESSION['usuario_nome'] = $usuario['nome'];
+            $_SESSION['is_admin'] = $usuario['is_admin'];
+
+            // Reseta as tentativas de login após o sucesso
+            $stmt_reset = $pdo->prepare("DELETE FROM tentativas_login WHERE email = ?");
+            $stmt_reset->execute([$email]);
+
+            // Redireciona com base na permissão
+            if ($usuario['is_admin'] == 1) { 
+                header("Location: dashboard-admin.php");
+            } else {
+                header("Location: inicio.php");
+            }
+            exit();
+        } else {
+            // Login falhou: registra a tentativa
+            $erro = "E-mail ou senha incorretos.";
+            
+            // Incrementa o contador de tentativas
+            $stmt_count = $pdo->prepare("SELECT tentativas FROM tentativas_login WHERE email = ?");
+            $stmt_count->execute([$email]);
+            $tentativas_atuais = $stmt_count->fetchColumn();
+
+            if ($tentativas_atuais === false) {
+                // Primeira tentativa de erro: insere um novo registro
+                $stmt_insert = $pdo->prepare("INSERT INTO tentativas_login (email, tentativas, hora_ultima_tentativa) VALUES (?, 1, NOW())");
+                $stmt_insert->execute([$email]);
+            } else {
+                $novas_tentativas = $tentativas_atuais + 1;
+                $bloqueado_ate = null;
+                if ($novas_tentativas >= 3) {
+                    $bloqueado_ate = date('Y-m-d H:i:s', strtotime('+1 minute'));
+                }
+                
+                // Atualiza o registro de tentativas
+                $stmt_update = $pdo->prepare("UPDATE tentativas_login SET tentativas = ?, hora_ultima_tentativa = NOW(), bloqueado_ate = ? WHERE email = ?");
+                $stmt_update->execute([$novas_tentativas, $bloqueado_ate, $email]);
+            }
+        }
     }
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 
